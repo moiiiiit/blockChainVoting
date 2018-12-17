@@ -7,8 +7,10 @@ import java.io.FileOutputStream;
 import java.io.File;
 import java.io.IOException;
 
+
+
 enum CandidateNames{
-    MB("Mohit Bhole"), JH("Jacob Hill"), CJ("Charles Jackson"), RH("Robert Ehle"), TS("Tanner Seivart");
+    MOHITBHOLE("Mohit Bhole"), JACOBHILL("Jacob Hill"), CARLESJACKSON("Charles Jackson"), ROBERTEHLE("Robert Ehle"), TANNERSEIVART("Tanner Seivart");
     protected String name;
     private long iD;
 
@@ -63,6 +65,7 @@ public class MainGUI {
         comboBox3.setSelectedIndex(-1);
         counter = 0;
     }
+
 
     private void addToBlock(String voterID, CandidateNames first, CandidateNames second, CandidateNames third) {
             //OPEN THE CURRENTBLOCK FILE TO READ GUI INPUT AND PRINT TO FILE
