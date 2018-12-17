@@ -1,4 +1,3 @@
-
 import java.util.Base64;
 import javax.crypto.Cipher;
 import javax.crypto.spec.SecretKeySpec;
@@ -11,7 +10,7 @@ import javax.crypto.spec.SecretKeySpec;
  * 128 bit algorithm and using the UTF-8 charset.
  */
 
-public class Encryption {
+public class EncryptionX {
     private static byte[] key = {
             0x2d, 0x2a, 0x2d, 0x42, 0x55, 0x49, 0x4c, 0x44, 0x41, 0x43, 0x4f, 0x44, 0x45, 0x2d, 0x2a, 0x2d
     };

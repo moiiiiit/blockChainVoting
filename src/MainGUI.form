@@ -6,29 +6,14 @@
       <xy x="20" y="20" width="482" height="494"/>
     </constraints>
     <properties>
-      <background color="-15152976"/>
+      <background color="-1446674"/>
       <enabled value="true"/>
+      <foreground color="-6842473"/>
     </properties>
     <border type="line">
       <color color="-13749965"/>
     </border>
     <children>
-      <component id="de17" class="javax.swing.JFormattedTextField" binding="voterIDField">
-        <constraints>
-          <grid row="3" column="2" row-span="1" col-span="4" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
-            <preferred-size width="150" height="-1"/>
-          </grid>
-        </constraints>
-        <properties/>
-      </component>
-      <component id="1e1cf" class="javax.swing.JFormattedTextField" binding="nameField">
-        <constraints>
-          <grid row="2" column="2" row-span="1" col-span="4" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
-            <preferred-size width="150" height="-1"/>
-          </grid>
-        </constraints>
-        <properties/>
-      </component>
       <component id="3e3c6" class="javax.swing.JButton" binding="submitVoteButton" default-binding="true">
         <constraints>
           <grid row="11" column="1" row-span="1" col-span="2" vsize-policy="0" hsize-policy="3" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
@@ -45,7 +30,7 @@
           <text value="Voter ID"/>
         </properties>
       </component>
-      <component id="2067" class="javax.swing.JLabel" binding="fisrtPriority">
+      <component id="2067" class="javax.swing.JLabel" binding="firstPriority">
         <constraints>
           <grid row="7" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
         </constraints>
@@ -147,6 +132,22 @@
           <grid row="10" column="0" row-span="1" col-span="8" vsize-policy="6" hsize-policy="1" anchor="0" fill="2" indent="0" use-parent-layout="false"/>
         </constraints>
       </vspacer>
+      <component id="c887a" class="javax.swing.JTextField" binding="nameField">
+        <constraints>
+          <grid row="2" column="5" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
+            <preferred-size width="150" height="-1"/>
+          </grid>
+        </constraints>
+        <properties/>
+      </component>
+      <component id="215c7" class="javax.swing.JTextField" binding="voterIDField">
+        <constraints>
+          <grid row="3" column="5" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
+            <preferred-size width="150" height="-1"/>
+          </grid>
+        </constraints>
+        <properties/>
+      </component>
     </children>
   </grid>
 </form>
