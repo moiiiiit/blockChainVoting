@@ -9,5 +9,5 @@ DOCUMENTATION
 
 There can be three main parts to the program - 
 1.  user enters voting id number(unless the card is scannable) and candidate number(or clicks on their picture/whatever). then {<voting id number>, <priority>} is the asset of candidate number {<candidate number>}. This is written to a block of 500(GLOBAL VARIABLE) entries. figure out how to accomodate votes coming in from different machines together. [UI]
-2.  take all blocks and parse file to calculate the total votes(every 30 min?). if a block doesn't agree with the same block from other machines (90%, global var), replace all the blocks from machines with different blocks. if more than 10% of the machines return a different block, quit and say that the vote was rigged.[FULLY BACKEND]
+2.  take all blocks and parse file to calculate the total votes(every 30 min?). if a block doesn't agree with the same block from other machines (90%, global var), replace all the blocks from machines with different blocks. if more than 10% of the machines return a different block, quit and say that the vote was rigged.[FULLY gBACKEND]
 3.  Network. Access the harddrive(where the blocks are stored) on every computer, how to use the same block/file from every machine on the network to compare them. How to constantly send and recieve data between the machine and the application running on it. [NETWORK]
