@@ -61,7 +61,7 @@ public class MainGUI {
         });
     }
 
-    public static void main(String[] args) {
+    public static void startApp() {
 
         JFrame frame = new JFrame("BlockChain Voting");
         frame.setPreferredSize(new Dimension(800, 400));
