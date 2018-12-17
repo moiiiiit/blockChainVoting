@@ -60,7 +60,7 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/calculateVotes.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="816">
+            <state relative-caret-position="765">
               <caret line="48" column="66" selection-start-line="48" selection-start-column="66" selection-end-line="48" selection-end-column="66" />
               <folding>
                 <element signature="n#!!doc" expanded="true" />
@@ -145,7 +145,7 @@
     <property name="UI_DESIGNER_EDITOR_MODE.UIDesignerToolWindowManager.WIDTH" value="314" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1545036690825" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1545037200529" />
     <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.0" />
@@ -193,7 +193,7 @@
       <workItem from="1545020502946" duration="66000" />
       <workItem from="1545020680100" duration="257000" />
       <workItem from="1545020958781" duration="354000" />
-      <workItem from="1545021341258" duration="11623000" />
+      <workItem from="1545021341258" duration="12126000" />
     </task>
     <task id="LOCAL-00001" summary="Created the form and GUI">
       <created>1544949755940</created>
@@ -220,7 +220,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="27450000" />
+    <option name="totallyTimeSpent" value="27953000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -367,7 +367,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/calculateVotes.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="816">
+        <state relative-caret-position="765">
           <caret line="48" column="66" selection-start-line="48" selection-start-column="66" selection-end-line="48" selection-end-column="66" />
           <folding>
             <element signature="n#!!doc" expanded="true" />
