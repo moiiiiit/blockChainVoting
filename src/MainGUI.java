@@ -43,7 +43,6 @@ public class MainGUI {
         submitVoteButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                JOptionPane.showMessageDialog(panel1, "Hello World!");
                 resetValues();
             }
         });
