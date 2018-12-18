@@ -42,11 +42,4 @@ public class EncryptionX {
         }
         return null;
     }
-
-    public static void main(String args[]) {
-        String encrypted = encrypt("Buildacode AES-128 bit Encryption");
-        String decrypted = decrypt("tm+m/bhBMk+fc6a/2ScztLdY+PzGUhih1oNUiGKv97lfHAeiRclBKyU6Wi2elCri");
-        System.out.println("Encrypted String : " + encrypted);
-        System.out.println("Decrypted String : " + decrypted);
-    }
 }
