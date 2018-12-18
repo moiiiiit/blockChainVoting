@@ -4,8 +4,10 @@ import java.awt.event.ActionListener;
 import java.awt.*;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
+import java.io.FileInputStream;
 import java.io.File;
 import java.io.IOException;
+import java.nio.channels.FileChannel;
 
 
 
@@ -54,7 +56,7 @@ public class MainGUI {
     private JComboBox comboBox2;
     private JComboBox comboBox3;
     private static int counter;
-    public final static int maxEntriesPerBlock = 500;
+    public final static int maxEntriesPerBlock = 2;
 
 
     private void resetValues(){
@@ -63,7 +65,6 @@ public class MainGUI {
         comboBox1.setSelectedIndex(-1);
         comboBox2.setSelectedIndex(-1);
         comboBox3.setSelectedIndex(-1);
-        counter = 0;
     }
 
 
@@ -81,6 +82,11 @@ public class MainGUI {
             catch (IOException e){
                 return;
             }
+            try {
+                writer.close();
+            }catch(Exception closee){
+
+            }
         }
         catch (FileNotFoundException e){
             File file = new File("currentBlock.txt");
@@ -93,13 +99,30 @@ public class MainGUI {
         }
 
 
-
-
             counter++;
             if (counter >= maxEntriesPerBlock) {
                 //SAVE TO MAIN FILE(BLOCK-CHAIN) FUNCTION
-
+                File output = new File("blockChain.txt");
+                File input = new File("currentBlock.txt");
+                try {
+                    copyFileUsingChannel(input, output);
+                }catch (Exception z){
+                    return;
+                }
             }
+    }
+
+    private static void copyFileUsingChannel(File source, File dest) throws IOException {
+        FileChannel sourceChannel = null;
+        FileChannel destChannel = null;
+        try {
+            sourceChannel = new FileInputStream(source).getChannel();
+            destChannel = new FileOutputStream(dest).getChannel();
+            destChannel.transferFrom(sourceChannel, 0, sourceChannel.size());
+        }finally{
+            sourceChannel.close();
+            destChannel.close();
+        }
     }
 
     public MainGUI() {
@@ -143,5 +166,8 @@ public class MainGUI {
         counter = 0;
         frame.setVisible(true);
 
+        System.out.println(EncryptionX.decrypt("Fj3lyDKM+mghZX5iovsJIbYO5Dd6tqLdaR1j68Nsf9WwJmKgiF1dPKk786bnvjpzbvW+xaPXD1bfDtKESi8CjQ=="));
+        System.out.println(EncryptionX.decrypt("xfZ8wtlbVY2VLwlHyqzL8rYO5Dd6tqLdaR1j68Nsf9VESgomTIe0xNnxWAUBsFmmor6m0f7C45J8bJ/R2uKSYQ=="));
+        System.out.println(EncryptionX.decrypt("e1x4ert+RarKqRG+oTAn3gC+JLASrkjk/rFhFZ8kOftUpGMcOzazHdbKh4Bat/oYey0HijjASjZ/1AgCt/4bAQ=="));
     }
 }
