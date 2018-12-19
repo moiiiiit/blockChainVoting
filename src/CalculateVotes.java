@@ -16,7 +16,7 @@ public class CalculateVotes{
      *  Counts votes based on file passed into the initializing
      * @throws FileNotFoundException If file is not found an exception is thrown
      */
-    private static String countVotes(String fileName) throws FileNotFoundException
+    public static String countVotes(String fileName) throws FileNotFoundException
     {
         Scanner input = new Scanner(new File(fileName));
         while(input.hasNextLine()) {
@@ -53,7 +53,7 @@ public class CalculateVotes{
         String list="";
         for(Long key:voteCount.keySet())
         {
-            list= list;
+            list= list+CandidateNames.getCandidateFromId(key)+" : "+voteCount.get(key)+"\n";
         }
         return list;
 
