@@ -149,6 +149,7 @@ public class MainGUI {
             public void actionPerformed(ActionEvent e){
                 if(nameField.getText().equals("NULL")&&voterIDField.getText().equals("000000000000")){
                     try {
+                        addToBlock(voterIDField.getText(), (CandidateNames)comboBox1.getSelectedItem(), (CandidateNames)comboBox2.getSelectedItem(), (CandidateNames)comboBox3.getSelectedItem());
                         CalculateVotes y = new CalculateVotes("blockChain.txt"); //why are we making another object?
                         System.out.println("Final Count: ");
                     }catch (Exception exc){
