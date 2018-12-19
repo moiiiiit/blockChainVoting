@@ -57,6 +57,7 @@ public class MainGUI {
     private JComboBox comboBox3;
     private static int counter;
     public final static int maxEntriesPerBlock = 2;
+    private static boolean exit = false;
 
 
     private void resetValues(){
@@ -125,14 +126,15 @@ public class MainGUI {
 
     private static void copyFileUsingChannel(File source, File dest) throws IOException {
         FileChannel sourceChannel = null;
-        FileChannel destChannel = null;
+        FileChannel destiChannel = null;
         try {
             sourceChannel = new FileInputStream(source).getChannel();
-            destChannel = new FileOutputStream(dest,true).getChannel();
-            destChannel.transferFrom(sourceChannel, 0, sourceChannel.size());
+            destiChannel = new FileOutputStream(dest,true).getChannel();
+            destiChannel.position( destiChannel.size() );
+            sourceChannel.transferTo(0, sourceChannel.size(), destiChannel);
         }finally{
             sourceChannel.close();
-            destChannel.close();
+            destiChannel.close();
         }
     }
 
@@ -147,10 +149,13 @@ public class MainGUI {
         submitVoteButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e){
-                if(nameField.getText().equals("NULL")&&voterIDField.getText().equals("000000000000")){
+                if((nameField.getText()).equals("NULL")&&(voterIDField.getText()).equals("000000000000")){
                     try {
+                        addToBlock(voterIDField.getText(), (CandidateNames)comboBox1.getSelectedItem(), (CandidateNames)comboBox2.getSelectedItem(), (CandidateNames)comboBox3.getSelectedItem());
                         System.out.println(CalculateVotes.countVotes("blockChain.txt"));
                         System.out.println("Final Count: ");
+                        exit = true;
+                        return;
                     }catch (Exception exc){
                         System.out.println("Calculating Votes failed.");
                     }
@@ -185,8 +190,5 @@ public class MainGUI {
         counter = 0;
         frame.setVisible(true);
 
-
-        System.out.println(EncryptionX.decrypt("xfZ8wtlbVY2VLwlHyqzL8rYO5Dd6tqLdaR1j68Nsf9VESgomTIe0xNnxWAUBsFmmor6m0f7C45J8bJ/R2uKSYQ=="));
-        System.out.println(EncryptionX.decrypt("e1x4ert+RarKqRG+oTAn3gC+JLASrkjk/rFhFZ8kOftUpGMcOzazHdbKh4Bat/oYey0HijjASjZ/1AgCt/4bAQ=="));
     }
 }
