@@ -3,20 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="46a5dc23-9988-40b9-8d2d-afa51e16d13a" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/currentBlock.txt" beforeDir="false" afterPath="$PROJECT_DIR$/currentBlock.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/blockChainVoting/CandidateNames.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/blockChainVoting/CandidateNames.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/blockChainVoting/EncryptionX.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/blockChainVoting/EncryptionX.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/blockChainVoting/MainGUI$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/blockChainVoting/MainGUI$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/blockChainVoting/MainGUI$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/blockChainVoting/MainGUI$2.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/blockChainVoting/MainGUI$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/blockChainVoting/MainGUI$3.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/blockChainVoting/MainGUI.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/blockChainVoting/MainGUI.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/blockChainVoting/calculateVotes.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/blockChainVoting/calculateVotes.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/blockChainVoting/com/intellij/uiDesigner/core/HorizontalInfo.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/blockChainVoting/com/intellij/uiDesigner/core/HorizontalInfo.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/blockChainVoting/com/intellij/uiDesigner/core/LayoutState.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/blockChainVoting/com/intellij/uiDesigner/core/LayoutState.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/blockChainVoting/com/intellij/uiDesigner/core/Util.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/blockChainVoting/com/intellij/uiDesigner/core/Util.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/blockChainVoting/com/intellij/uiDesigner/core/VerticalInfo.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/blockChainVoting/com/intellij/uiDesigner/core/VerticalInfo.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/MainGUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/MainGUI.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/calculateVotes.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/CalculateVotes.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -114,8 +100,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/MainGUI.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="306">
-              <caret line="96" column="23" lean-forward="true" selection-start-line="96" selection-start-column="23" selection-end-line="96" selection-end-column="23" />
+            <state relative-caret-position="442">
+              <caret line="98" column="9" lean-forward="true" selection-start-line="98" selection-start-column="9" selection-end-line="98" selection-end-column="9" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#606#607#0" expanded="true" />
@@ -210,7 +196,7 @@
     <property name="UI_DESIGNER_EDITOR_MODE.UIDesignerToolWindowManager.WIDTH" value="314" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1545187505543" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1545187632885" />
     <property name="project.structure.last.edited" value="SDKs" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.0" />
@@ -299,11 +285,18 @@
       <option name="project" value="LOCAL" />
       <updated>1545037420086</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="Created the form and GUI">
+      <created>1545187514518</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1545187514518</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="44700000" />
+    <option name="totallyTimeSpent" value="45339000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-6" y="0" width="1038" height="830" extended-state="0" />
@@ -428,8 +421,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/MainGUI.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="96" column="23" lean-forward="true" selection-start-line="96" selection-start-column="23" selection-end-line="96" selection-end-column="23" />
+        <state relative-caret-position="442">
+          <caret line="98" column="9" lean-forward="true" selection-start-line="98" selection-start-column="9" selection-end-line="98" selection-end-column="9" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#606#607#0" expanded="true" />
