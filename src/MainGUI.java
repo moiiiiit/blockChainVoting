@@ -55,6 +55,7 @@ public class MainGUI {
     private JComboBox comboBox1;
     private JComboBox comboBox2;
     private JComboBox comboBox3;
+    private static JFrame frame = new JFrame("BlockChain Voting");
     private static int counter;
     public final static int maxEntriesPerBlock = 2;
     private static boolean exit = false;
@@ -167,9 +168,11 @@ public class MainGUI {
                         System.out.println(CalculateVotes.countVotes("blockChain.txt"));
                         System.out.println("Final Count: ");
                         exit = true;
+                        frame.dispose();
                         return;
                     }catch (Exception exc){
                         System.out.println("Calculating Final Votes Failed.");
+                        frame.dispose();
                         return;
                     }
                 }
@@ -195,13 +198,10 @@ public class MainGUI {
     }
 
     public static void main(String[] args) {
-
-        JFrame frame = new JFrame("BlockChain Voting");
         frame.setPreferredSize(new Dimension(800, 400));
         frame.setContentPane(new MainGUI().panel1);
         frame.pack();
         counter = 0;
         frame.setVisible(true);
-
     }
 }
