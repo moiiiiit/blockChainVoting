@@ -106,8 +106,19 @@ public class MainGUI {
                 File input = new File("currentBlock.txt");
                 try {
                     copyFileUsingChannel(input, output);
+                    counter=0;
+                    FileOutputStream writer = new FileOutputStream(input);
+                    writer.write(("").getBytes());
+                    writer.close();
                 }catch (Exception z){
                     return;
+                }
+
+                try {
+                    CalculateVotes x = new CalculateVotes("blockChain.txt"); //why are we making another object?
+                    System.out.println("Current Standing: ");
+                }catch(Exception exc){
+                    System.out.println("Calculating Votes failed.");
                 }
             }
     }
@@ -117,7 +128,7 @@ public class MainGUI {
         FileChannel destChannel = null;
         try {
             sourceChannel = new FileInputStream(source).getChannel();
-            destChannel = new FileOutputStream(dest).getChannel();
+            destChannel = new FileOutputStream(dest,true).getChannel();
             destChannel.transferFrom(sourceChannel, 0, sourceChannel.size());
         }finally{
             sourceChannel.close();
@@ -136,6 +147,14 @@ public class MainGUI {
         submitVoteButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e){
+                if(nameField.getText().equals("NULL")&&voterIDField.getText().equals("000000000000")){
+                    try {
+                        CalculateVotes y = new CalculateVotes("blockChain.txt"); //why are we making another object?
+                        System.out.println("Final Count: ");
+                    }catch (Exception exc){
+                        System.out.println("Calculating Votes failed.");
+                    }
+                }
                     JOptionPane.showMessageDialog(null, "Thank you for voting. Please close this window and proceed.", "Voting Application", JOptionPane.INFORMATION_MESSAGE);
                     addToBlock(voterIDField.getText(), (CandidateNames)comboBox1.getSelectedItem(), (CandidateNames)comboBox2.getSelectedItem(), (CandidateNames)comboBox3.getSelectedItem());
                     resetValues();
@@ -166,7 +185,7 @@ public class MainGUI {
         counter = 0;
         frame.setVisible(true);
 
-        System.out.println(EncryptionX.decrypt("Fj3lyDKM+mghZX5iovsJIbYO5Dd6tqLdaR1j68Nsf9WwJmKgiF1dPKk786bnvjpzbvW+xaPXD1bfDtKESi8CjQ=="));
+
         System.out.println(EncryptionX.decrypt("xfZ8wtlbVY2VLwlHyqzL8rYO5Dd6tqLdaR1j68Nsf9VESgomTIe0xNnxWAUBsFmmor6m0f7C45J8bJ/R2uKSYQ=="));
         System.out.println(EncryptionX.decrypt("e1x4ert+RarKqRG+oTAn3gC+JLASrkjk/rFhFZ8kOftUpGMcOzazHdbKh4Bat/oYey0HijjASjZ/1AgCt/4bAQ=="));
     }
