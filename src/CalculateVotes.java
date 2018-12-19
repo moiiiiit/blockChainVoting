@@ -10,40 +10,13 @@ import java.util.HashMap;
 
 
 public class CalculateVotes{
-    private String fileName; //Name of the file
-    private HashMap<Long,Long> voteCount;
-
-    /**
-     *
-     * @param fileName  The file name of the file to be read
-     * @throws FileNotFoundException Throws exception if file with name is not found.
-     */
-    public CalculateVotes(String fileName) throws FileNotFoundException
-    {
-        this.fileName = fileName;
-        countVotes();
-    }
-
-    /**
-     *
-     * @param candidateID Candidate to get number of votes for
-     * @return return
-     */
-    public int getVoteCount(int candidateID) throws NoSuchElementException{
-        Object value = voteCount.get(candidateID);
-        if(value!=null)
-            return (Integer)value;
-        else
-        {
-            throw new NoSuchElementException("No candidate with such ID was found");
-        }
-    }
+    private static HashMap<Long,Long> voteCount;
 
     /**
      *  Counts votes based on file passed into the initializing
      * @throws FileNotFoundException If file is not found an exception is thrown
      */
-    private void countVotes() throws FileNotFoundException
+    public static String countVotes(String fileName) throws FileNotFoundException
     {
         Scanner input = new Scanner(new File(fileName));
         while(input.hasNextLine()) {
@@ -77,6 +50,12 @@ public class CalculateVotes{
                 voteCount.put(candidateID,voteCount.get(candidateID)+rank);
         }
 
+        String list="";
+        for(Long key:voteCount.keySet())
+        {
+            list= list+CandidateNames.getCandidateFromId(key)+" : "+voteCount.get(key)+"\n";
+        }
+        return list;
 
 
     }

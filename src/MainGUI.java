@@ -29,7 +29,7 @@ enum CandidateNames{
         return this.name;
     }
 
-    public CandidateNames getCandidateFromId(long identification){
+    public static CandidateNames getCandidateFromId(long identification){
         for(CandidateNames s : CandidateNames.values()){
             if(s.iD == identification){
                 return s;
@@ -115,7 +115,7 @@ public class MainGUI {
                 }
 
                 try {
-                    CalculateVotes x = new CalculateVotes("blockChain.txt"); //why are we making another object?
+                    CalculateVotes.countVotes("blockChain.txt");
                     System.out.println("Current Standing: ");
                 }catch(Exception exc){
                     System.out.println("Calculating Votes failed.");
@@ -149,8 +149,7 @@ public class MainGUI {
             public void actionPerformed(ActionEvent e){
                 if(nameField.getText().equals("NULL")&&voterIDField.getText().equals("000000000000")){
                     try {
-                        addToBlock(voterIDField.getText(), (CandidateNames)comboBox1.getSelectedItem(), (CandidateNames)comboBox2.getSelectedItem(), (CandidateNames)comboBox3.getSelectedItem());
-                        CalculateVotes y = new CalculateVotes("blockChain.txt"); //why are we making another object?
+                        System.out.println(CalculateVotes.countVotes("blockChain.txt"));
                         System.out.println("Final Count: ");
                     }catch (Exception exc){
                         System.out.println("Calculating Votes failed.");
