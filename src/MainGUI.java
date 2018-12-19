@@ -29,7 +29,7 @@ enum CandidateNames{
         return this.name;
     }
 
-    public CandidateNames getCandidateFromId(long identification){
+    public static CandidateNames getCandidateFromId(long identification){
         for(CandidateNames s : CandidateNames.values()){
             if(s.iD == identification){
                 return s;
@@ -165,7 +165,6 @@ public class MainGUI {
         frame.pack();
         counter = 0;
         frame.setVisible(true);
-
         System.out.println(EncryptionX.decrypt("Fj3lyDKM+mghZX5iovsJIbYO5Dd6tqLdaR1j68Nsf9WwJmKgiF1dPKk786bnvjpzbvW+xaPXD1bfDtKESi8CjQ=="));
         System.out.println(EncryptionX.decrypt("xfZ8wtlbVY2VLwlHyqzL8rYO5Dd6tqLdaR1j68Nsf9VESgomTIe0xNnxWAUBsFmmor6m0f7C45J8bJ/R2uKSYQ=="));
         System.out.println(EncryptionX.decrypt("e1x4ert+RarKqRG+oTAn3gC+JLASrkjk/rFhFZ8kOftUpGMcOzazHdbKh4Bat/oYey0HijjASjZ/1AgCt/4bAQ=="));
