@@ -151,13 +151,26 @@ public class MainGUI {
             public void actionPerformed(ActionEvent e){
                 if((nameField.getText()).equals("NULL")&&(voterIDField.getText()).equals("000000000000")){
                     try {
-                        addToBlock(voterIDField.getText(), (CandidateNames)comboBox1.getSelectedItem(), (CandidateNames)comboBox2.getSelectedItem(), (CandidateNames)comboBox3.getSelectedItem());
+                        //PUT TO BLOCKCHAIN
+                        File output = new File("blockChain.txt");
+                        File input = new File("currentBlock.txt");
+                        try {
+                            copyFileUsingChannel(input, output);
+                            counter=0;
+                            FileOutputStream writer = new FileOutputStream(input);
+                            writer.write(("").getBytes());
+                            writer.close();
+                        }catch (Exception z){
+                            return;
+                        }
+                        //
                         System.out.println(CalculateVotes.countVotes("blockChain.txt"));
                         System.out.println("Final Count: ");
                         exit = true;
                         return;
                     }catch (Exception exc){
-                        System.out.println("Calculating Votes failed.");
+                        System.out.println("Calculating Final Votes Failed.");
+                        return;
                     }
                 }
                     JOptionPane.showMessageDialog(null, "Thank you for voting. Please close this window and proceed.", "Voting Application", JOptionPane.INFORMATION_MESSAGE);
