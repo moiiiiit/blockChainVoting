@@ -10,7 +10,7 @@ import java.util.HashMap;
 
 
 public class CalculateVotes{
-    private static HashMap<Long,Long> voteCount;
+    private static HashMap<Long,Long> voteCount= new HashMap<>();
 
     /**
      *  Counts votes based on file passed into the initializing
@@ -24,8 +24,8 @@ public class CalculateVotes{
             //long voterID = Long.parseLong(line.substring(0, 12)); //Don't need voter ID because assuming all voterID's are only used once.
             long candidateID = Long.parseLong(line.substring(12, 24));
             int rank = Integer.parseInt(line.substring(24, 25));
-
-            if(voteCount.get(candidateID)!=null)
+            Object test = voteCount.get(candidateID);
+            if(voteCount.get(candidateID)==null)
                 voteCount.put(candidateID,(long)rank);
             else
                 voteCount.put(candidateID,voteCount.get(candidateID)+rank);
@@ -34,7 +34,7 @@ public class CalculateVotes{
             candidateID= Long.parseLong(line.substring(25, 37));
             rank = Integer.parseInt(line.substring(37, 38));
 
-            if(voteCount.get(candidateID)!=null)
+            if(voteCount.get(candidateID)==null)
                 voteCount.put(candidateID,(long)rank);
             else
                 voteCount.put(candidateID,voteCount.get(candidateID)+rank);
@@ -44,7 +44,7 @@ public class CalculateVotes{
             candidateID= Long.parseLong(line.substring(38, 50));
             rank = Integer.parseInt(line.substring(50, 51));
 
-            if(voteCount.get(candidateID)!=null)
+            if(voteCount.get(candidateID)==null)
                 voteCount.put(candidateID,(long)rank);
             else
                 voteCount.put(candidateID,voteCount.get(candidateID)+rank);

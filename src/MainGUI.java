@@ -175,13 +175,12 @@ public class MainGUI {
                         System.out.println(CalculateVotes.countVotes("blockChain.txt"));
                         System.out.println("Final Count: ");
                         exit = true;
-                        frame.dispose();
-                        return;
+
                     }catch (Exception exc){
                         System.out.println("Calculating Final Votes Failed.");
-                        frame.dispose();
-                        return;
                     }
+                    frame.dispose();
+                    return;
                 }
                     JOptionPane.showMessageDialog(null, "Thank you for voting. Please close this window and proceed.", "Voting Application", JOptionPane.INFORMATION_MESSAGE);
                     addToBlock(voterIDField.getText(), (CandidateNames)comboBox1.getSelectedItem(), (CandidateNames)comboBox2.getSelectedItem(), (CandidateNames)comboBox3.getSelectedItem());
