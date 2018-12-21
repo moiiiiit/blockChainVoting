@@ -10,11 +10,11 @@ import java.io.IOException;
 import java.nio.channels.FileChannel;
 
 
-
+//THIS ENUM CONTAINS ALL CANDIDATE NAMES WITH RANDOMLY GENERATED CANDIDATE IDs WHICH WILL BE PUT INTO THE FILES
 enum CandidateNames{
-    MOHITBHOLE("Mohit Bhole"), JACOBHILL("Jacob Hill"), CARLESJACKSON("Charles Jackson"), ROBERTEHLE("Robert Ehle"), TANNERSEIVART("Tanner Seivart");
-    protected String name;
-    private long iD;
+    MOHITBHOLE("Mohit Bhole"), JACOBHILL("Jacob Hill"), CARLESJACKSON("Charles Jackson"), ROBERTEHLE("Robert Ehle"), TANNERSEIVART("Tanner Seivart");   //HARDCODED
+    protected String name;              //CANDIDATE NAME JUST CUZ
+    private long iD;                    //iD
 
     CandidateNames(String namex){
         this.name = namex;
@@ -23,13 +23,13 @@ enum CandidateNames{
 
     public long getiD(){
         return this.iD;
-    }
+    }       //yaknow
 
     public String getName(){
         return this.name;
-    }
+    }   //yaknow
 
-    public static CandidateNames getCandidateFromId(long identification){
+    public static CandidateNames getCandidateFromId(long identification){   //this function returns the candidateName enum for a particular candidate id
         for(CandidateNames s : CandidateNames.values()){
             if(s.iD == identification){
                 return s;
@@ -61,7 +61,7 @@ public class MainGUI {
     private static boolean exit = false;
 
 
-    private void resetValues(){
+    private void resetValues(){             //dont care about this. this resets values when cancel/submit is clicked
         nameField.setText("");
         voterIDField.setText("");
         comboBox1.setSelectedIndex(-1);
@@ -69,15 +69,22 @@ public class MainGUI {
         comboBox3.setSelectedIndex(-1);
     }
 
-
-    private void addToBlock(String voterID, CandidateNames first, CandidateNames second, CandidateNames third) {
+    /**
+     *
+     * @param voterID
+     * @param first
+     * @param second
+     * @param third
+     * CHARLES BOI YOU MIGHT NEED TO TWEAK THIS FUNCTION
+     */
+    private void addToBlock(String voterID, CandidateNames first, CandidateNames second, CandidateNames third) {        //adds data from form to currentblock.txt
             //OPEN THE CURRENTBLOCK FILE TO READ GUI INPUT AND PRINT TO FILE
         try {
             String str = voterID + first.getiD() + "1" + second.getiD() + "2" + third.getiD() + "3";
             str = EncryptionX.encrypt(str);
             str = str + "\n";
             byte[] encryptedStr = str.getBytes();
-            FileOutputStream writer = new FileOutputStream("currentBlock.txt", true);
+            FileOutputStream writer = new FileOutputStream("currentBlock.txt", true);   //write to file
             try {
                 writer.write(encryptedStr);
             }
@@ -101,10 +108,10 @@ public class MainGUI {
         }
 
 
-            counter++;
+            counter++;                                  //this counter keeps count of the number of entries in currentBlock
             if (counter >= maxEntriesPerBlock) {
                 //SAVE TO MAIN FILE(BLOCK-CHAIN) FUNCTION
-                File output = new File("blockChain.txt");
+                File output = new File("blockChain.txt");   //copy from currentBlock to blockChain if counter reaches maxEntriesPerBlock
                 File input = new File("currentBlock.txt");
                 try {
                     copyFileUsingChannel(input, output);
@@ -125,7 +132,7 @@ public class MainGUI {
             }
     }
 
-    private static void copyFileUsingChannel(File source, File dest) throws IOException {
+    private static void copyFileUsingChannel(File source, File dest) throws IOException {       //IGNORE it just copies one file to another
         FileChannel sourceChannel = null;
         FileChannel destiChannel = null;
         try {
@@ -181,14 +188,14 @@ public class MainGUI {
                     resetValues();
                 }
         });
-        cancelButton.addActionListener(new ActionListener() {
+        cancelButton.addActionListener(new ActionListener() {   //cancel button
             @Override
             public void actionPerformed(ActionEvent e) {
                 JOptionPane.showMessageDialog(null, "Values Cleared. Please proceed if you don't want to vote, or have already voted.", "Voting Application", JOptionPane.INFORMATION_MESSAGE);
                 resetValues();
             }
         });
-        viewCandidates.addActionListener(new ActionListener() {
+        viewCandidates.addActionListener(new ActionListener() { //view candidates button
             @Override
             public void actionPerformed(ActionEvent e) {
                 Candidates dialog = new Candidates();
@@ -197,7 +204,7 @@ public class MainGUI {
         });
     }
 
-    public static void main(String[] args) {
+    public static void main(String[] args) {                    //driver function
         frame.setPreferredSize(new Dimension(800, 400));
         frame.setContentPane(new MainGUI().panel1);
         frame.pack();
