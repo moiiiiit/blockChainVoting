@@ -4,9 +4,9 @@ import java.util.*;
 //@author Charles Jackson
 public class Client{
     final PrintWriter block;
-    final int blockSize=500;                                                    //how many votes are in one block
+    final int maxEntriesPerBlock=500;                                                    //how many votes are in one block
     final int voteSize=51;                                                      //how many Characters is one vote
-    final double threshold=.9;
+    final double threshold=.9;                                                  //percent error allowed in the blockchain
     String myIp = "";                                                           //the public ip of the network private network I'm in
     String[] ips = {"", ""};                                                    //the public ip of every private network including my own
     ServerSocket me;                                                            //this is to get connected to other machines and recieve things from them
@@ -100,14 +100,14 @@ PN:     for(int i = 0; i < ips.length; ++i)                                     
      */
     public String[] getNextBlock() throws CorruptedBlockException, FileNotFoundException, IOException{
         Scanner myBlockFile = new Scanner(new File("block.txt"));               //for reading in my block from a file
-        String[] myBlock = new String[blockSize];                               //to store my block
-        String[][] blocks =new String[others.size()][blockSize];                //for storing the blocks for machines other than my own                                                 
+        String[] myBlock = new String[maxEntriesPerBlock];                               //to store my block
+        String[][] blocks =new String[others.size()][maxEntriesPerBlock];                //for storing the blocks for machines other than my own                                                 
         for(int i=0;myBlockFile.hasNextLine();++i)                                       
             myBlock[i]=myBlockFile.nextLine();
         Arrays.sort(myBlock);
         for(Socket oth : others){                                               //send my sorted block to all machines
             DataOutputStream dout=(DataOutputStream) oth.getOutputStream();     //get the connection
-            for(int i=0; i<blockSize; ++i)                                      //for my block
+            for(int i=0; i<maxEntriesPerBlock; ++i)                                      //for my block
                 for(int j=0;j <voteSize; ++j)                                   //for each of my votes
                     dout.writeChar(myBlock[i].charAt(j));                       //send each char
         }
@@ -115,7 +115,7 @@ PN:     for(int i = 0; i < ips.length; ++i)                                     
             try{
                 Socket incomming = me.accept();                                 //try to get infromation from connections
                 DataInputStream din = (DataInputStream) incomming.getInputStream();
-                for(int j=0; j<blockSize; ++j)                                  //read in one block
+                for(int j=0; j<maxEntriesPerBlock; ++j)                                  //read in one block
                     for(int k=0;k <voteSize; ++k)                               //read in one vote             
                         blocks[i][j]+=din.readChar();
             }catch(SocketTimeoutException tm){                                  //if no one is responding
@@ -127,10 +127,10 @@ PN:     for(int i = 0; i < ips.length; ++i)                                     
         double PPE=0;                                                           
         for(int i=0; i<blocks.length;++i){                                      //for all other blocks
             int errorCount=0;
-            for(int j=0;j <blockSize; ++j)                                      //for every vote in the block
+            for(int j=0;j <maxEntriesPerBlock; ++j)                                      //for every vote in the block
                 if(!blocks[i][j].equals(myBlock[j]))                            //if there is a bad vote
                     errorCount+=1;                                              //Bad vote!
-            PPE+=errorCount/(double)blockSize;                                  //keep a sum of the average difference between my block and other blocks
+            PPE+=errorCount/(double)maxEntriesPerBlock;                                  //keep a sum of the average difference between my block and other blocks
         }
         PPE/=(double)blocks.length;                                             //sum of the averages ÷ number blocks gotten from other machines(AKA number of other machines) = my Personal Percent Error
         double[] PPEs=new double[ips.length];                                   //error in PPE[i] is associated with machine with socket[i] 
@@ -159,7 +159,7 @@ PN:     for(int i = 0; i < ips.length; ++i)                                     
                 //send my good block to corrupted machines(AKA all machines)
                 for(Socket oth : others){                                       //send my sorted block to all machines
                     DataOutputStream dout=(DataOutputStream) oth.getOutputStream();//get the connection
-                    for(int i=0; i<blockSize; ++i)                              //for my block
+                    for(int i=0; i<maxEntriesPerBlock; ++i)                              //for my block
                         for(int j=0;j <voteSize; ++j)                           //for each of my votes
                             dout.writeChar(myBlock[i].charAt(j));               //send each char
                 }                                                               //return my block
@@ -170,7 +170,7 @@ PN:     for(int i = 0; i < ips.length; ++i)                                     
                         Socket incomming=me.accept();                               //get incomming connection
                         DataInputStream dout=(DataInputStream)incomming.getInputStream();//get the connection
                         if(dout.available()!=0)                                     //if a good block was sent
-                            for(int j=0; j<blockSize; ++j)                          //read in the good block
+                            for(int j=0; j<maxEntriesPerBlock; ++j)                          //read in the good block
                                 for(int k=0;k <voteSize; ++k)                       //read in one vote             
                                     blocks[i][j]+=dout.readChar();
                     }catch(SocketTimeoutException tm){                                  //if no one is responding
