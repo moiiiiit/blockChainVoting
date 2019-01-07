@@ -126,6 +126,8 @@ public class MainGUI {
             try{
                 String[] newBlock=getNextBlock();                               //this is the next block
                 //FIXY FIXIE MOHITY
+            }catch(CorruptedBlockException cbe){
+                System.out.println("Votes were lost here. Please revote");
             }catch(Exception ex){
                 System.out.println(ex.getMessage());
             }
