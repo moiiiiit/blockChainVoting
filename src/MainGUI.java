@@ -125,29 +125,40 @@ public class MainGUI {
             //SAVE TO MAIN FILE(BLOCK-CHAIN) FUNCTION
             try{
                 String[] newBlock=getNextBlock();                               //this is the next block
-                //FIXY FIXIE MOHITY
+                for(String vote: newBlock){
+                    FileOutputStream writer = new FileOutputStream(new File("blockChain.txt"));
+                    writer.write((vote+"\r\n").getBytes());
+                    writer.close();
+                }
+                FileOutputStream writer = new FileOutputStream(new File("currentBlock.txt"));                  //ERASES THE FILE
+                writer.write(("").getBytes());
+                writer.close();
+                numberOfCurrentVotes=0;
             }catch(CorruptedBlockException cbe){
                 System.out.println("Votes were lost here. Please revote");
+                File corruptedVotes = new File("corruptedVotes.txt");
+                File currentBlock = new File("currentBlock.txt");
+                try{
+                    copyFileUsingChannel(currentBlock,corruptedVotes);
+                    FileOutputStream writer = new FileOutputStream(currentBlock);                                       //ERASES THE FILE
+                    writer.write(("").getBytes());
+                    writer.close();
+                    numberOfCurrentVotes=0;
+                }catch(Exception exce){
+                    System.out.println("Copying corrupted votes to file failed.");
+                }
+
+                //add
             }catch(Exception ex){
                 System.out.println(ex.getMessage());
             }
-            File output = new File("blockChain.txt");   //copy from currentBlock to blockChain if counter reaches maxEntriesPerBlock       
-            try {
-                copyFileUsingChannel(input, output);
-                numberOfCurrentVotes=0;
-                FileOutputStream writer = new FileOutputStream(input);
-                writer.write(("").getBytes());
-                writer.close();
-            }catch (Exception z){
-                return;
-            }
 
-            try {
+            /*try {
                 CalculateVotes.countVotes("blockChain.txt");
                 System.out.println("Current Standing: ");
             }catch(Exception exc){
                 System.out.println("Calculating Votes failed.");
-            }
+            }*/
         }
     }
 
