@@ -258,8 +258,7 @@ public class MainGUI{
                 data[j] = (byte) vote.charAt(j);
             try{
                 for(int j = 0; j < MaxNumberOfMachinesPerNetwork; ++j)
-                    if(j != port) //if it's not me
-
+                    if(j != port)                                               //if it's not me
                         me.send(new DatagramPacket(data, data.length,           //send the vote
                                 InetAddress.getByName(ips[i]), 3535 + j));
             }catch(Exception ex){
@@ -315,8 +314,7 @@ public class MainGUI{
         for(int i = 0; i < ips.length; i++)                                     //for every network
             try{                                                                //send my sorted block
                 for(int j = 0; j < MaxNumberOfMachinesPerNetwork; ++j)
-                    if(j != port) //if it's not me
-
+                    if(j != port)                                               //if it's not me
                         me.send(new DatagramPacket(data, data.length,           //send the vote
                                 InetAddress.getByName(ips[i]), 3535 + j));
             }catch(Exception ex){
@@ -348,7 +346,8 @@ public class MainGUI{
         double[] PPEs = new double[ips.length];                                 //error in PPE[i] is associated with machine with socket[i]
         for(int i = 0; i < ips.length; ++i)                                     //send my PPE to all other machines
             for(int j = 0; j < MaxNumberOfMachinesPerNetwork; ++j)
-                me.send(new DatagramPacket(toBytes(PPE), 8, InetAddress.getByName(ips[i]), j + 4392));
+                if(j != port)                                                   //if it's not me
+                    me.send(new DatagramPacket(toBytes(PPE), 8, InetAddress.getByName(ips[i]), j + 4392));
         for(int i = 0; i < PPEs.length; ++i)                                    //receive PPE from all other machines
             try{
                 DatagramPacket o = new DatagramPacket(new byte[8], 8);
@@ -369,8 +368,7 @@ public class MainGUI{
                 for(int i = 0; i < ips.length; i++)                             //for every network
                     try{
                         for(int j = 0; j < MaxNumberOfMachinesPerNetwork; ++j)
-                            if(j != port) //if it's not me
-
+                            if(j != port)                                       //if it's not me
                                 me.send(new DatagramPacket(data, data.length,   //send the vote
                                         InetAddress.getByName(ips[i]), 3535 + j));
                     }catch(Exception ex){
