@@ -6,7 +6,9 @@
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="46a5dc23-9988-40b9-8d2d-afa51e16d13a" name="Default Changelist" comment="" />
+    <list default="true" id="46a5dc23-9988-40b9-8d2d-afa51e16d13a" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/src/MainGUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/MainGUI.java" afterDir="false" />
+    </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -98,8 +100,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/MainGUI.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="190">
-              <caret line="366" column="22" selection-start-line="366" selection-start-column="18" selection-end-line="366" selection-end-column="22" />
+            <state relative-caret-position="201">
+              <caret line="372" column="75" selection-start-line="372" selection-start-column="75" selection-end-line="372" selection-end-column="75" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#920#921#0" expanded="true" />
@@ -129,7 +131,13 @@
       <find>CalculateVotes</find>
       <find>maxentriesperblock</find>
       <find>first</find>
+      <find>send</find>
+      <find>35</find>
+      <find>3535</find>
     </findStrings>
+    <replaceStrings>
+      <replace>8080</replace>
+    </replaceStrings>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -228,7 +236,7 @@
       <workItem from="1546563160405" duration="90000" />
       <workItem from="1546893703176" duration="7331000" />
       <workItem from="1547586044075" duration="22000" />
-      <workItem from="1547681511453" duration="2035000" />
+      <workItem from="1547681511453" duration="2292000" />
     </task>
     <task id="LOCAL-00001" summary="Created the form and GUI">
       <created>1544949755940</created>
@@ -311,7 +319,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="59961000" />
+    <option name="totallyTimeSpent" value="60218000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -324,6 +332,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" weight="0.30067113" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -339,11 +348,11 @@
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32907802" />
-      <window_info active="true" anchor="bottom" id="Version Control" order="7" sideWeight="0.49932885" visible="true" weight="0.20851064" />
+      <window_info anchor="bottom" id="Version Control" order="7" sideWeight="0.49932885" weight="0.20851064" />
       <window_info anchor="bottom" id="Database Changes" order="8" show_stripe_button="false" />
       <window_info anchor="bottom" id="Terminal" order="9" weight="0.32765958" />
       <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.50067115" side_tool="true" weight="0.3319149" />
-      <window_info anchor="bottom" id="Messages" order="11" weight="0.24822696" />
+      <window_info active="true" anchor="bottom" id="Messages" order="11" visible="true" weight="0.24822696" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -458,8 +467,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/MainGUI.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="190">
-          <caret line="366" column="22" selection-start-line="366" selection-start-column="18" selection-end-line="366" selection-end-column="22" />
+        <state relative-caret-position="201">
+          <caret line="372" column="75" selection-start-line="372" selection-start-column="75" selection-end-line="372" selection-end-column="75" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#920#921#0" expanded="true" />

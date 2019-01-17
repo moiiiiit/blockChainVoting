@@ -168,14 +168,14 @@ public class MainGUI{
      * @throws FileNotFoundException
      */
     public MainGUI() throws SocketException, FileNotFoundException{
-        this(3535);
+        this(8080);
     }
     public MainGUI(int port) throws SocketException, FileNotFoundException{
         try{
             System.out.println("Opening servers");
-            me = new DatagramSocket(port + 3535);                               //this is so other machines can send to me
+            me = new DatagramSocket(port + 8080);                               //this is so other machines can send to me
             this.port = port;
-            receiveBlocks = new DatagramSocket(port + 4392);
+            receiveBlocks = new DatagramSocket(port + 8080);
         }catch(Exception ex){
             System.out.println(ex.getMessage());
         }
@@ -260,7 +260,7 @@ public class MainGUI{
                 for(int j = 0; j < MaxNumberOfMachinesPerNetwork; ++j)
                     if(j != port)                                               //if it's not me
                         me.send(new DatagramPacket(data, data.length,           //send the vote
-                                InetAddress.getByName(ips[i]), 3535 + j));
+                                InetAddress.getByName(ips[i]), 8080 + j));
             }catch(Exception ex){
                 System.out.println(ex.getMessage());
             }
@@ -316,7 +316,7 @@ public class MainGUI{
                 for(int j = 0; j < MaxNumberOfMachinesPerNetwork; ++j)
                     if(j != port)                                               //if it's not me
                         me.send(new DatagramPacket(data, data.length,           //send the vote
-                                InetAddress.getByName(ips[i]), 3535 + j));
+                                InetAddress.getByName(ips[i]), 8080 + j));
             }catch(Exception ex){
                 System.out.println(ex.getMessage());
             }
@@ -347,7 +347,7 @@ public class MainGUI{
         for(int i = 0; i < ips.length; ++i)                                     //send my PPE to all other machines
             for(int j = 0; j < MaxNumberOfMachinesPerNetwork; ++j)
                 if(j != port)                                                   //if it's not me
-                    me.send(new DatagramPacket(toBytes(PPE), 8, InetAddress.getByName(ips[i]), j + 4392));
+                    me.send(new DatagramPacket(toBytes(PPE), 8, InetAddress.getByName(ips[i]), j + 8080));
         for(int i = 0; i < PPEs.length; ++i)                                    //receive PPE from all other machines
             try{
                 DatagramPacket o = new DatagramPacket(new byte[8], 8);
@@ -370,7 +370,7 @@ public class MainGUI{
                         for(int j = 0; j < MaxNumberOfMachinesPerNetwork; ++j)
                             if(j != port)                                       //if it's not me
                                 me.send(new DatagramPacket(data, data.length,   //send the vote
-                                        InetAddress.getByName(ips[i]), 3535 + j));
+                                        InetAddress.getByName(ips[i]), 8080 + j));
                     }catch(Exception ex){
                         System.out.println(ex.getMessage());
                     } //return my block
