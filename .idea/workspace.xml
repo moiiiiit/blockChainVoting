@@ -1,14 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="ArtifactsWorkspaceSettings">
+    <artifacts-to-build>
+      <artifact name="blockChainVoting:jar" />
+    </artifacts-to-build>
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="46a5dc23-9988-40b9-8d2d-afa51e16d13a" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/artifacts/blockChainVoting_jar.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/blockChainVoting/CandidateNames.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/blockChainVoting/CandidateNames.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/blockChainVoting/Client.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/blockChainVoting/MainGUI$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/blockChainVoting/MainGUI$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/blockChainVoting/MainGUI$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/blockChainVoting/MainGUI$2.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/blockChainVoting/MainGUI$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/blockChainVoting/MainGUI$3.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/blockChainVoting/MainGUI.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/blockChainVoting/MainGUI.class" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -31,12 +30,14 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="java" value="448" />
+          <entry key="java" value="474" />
+          <entry key="txt" value="14" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="JAVA" value="448" />
+          <entry key="JAVA" value="474" />
+          <entry key="PLAIN_TEXT" value="14" />
         </counts>
       </usages-collector>
     </session>
@@ -100,9 +101,10 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/MainGUI.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="17">
-              <caret line="1" column="21" lean-forward="true" selection-start-line="1" selection-start-column="21" selection-end-line="1" selection-end-column="21" />
+            <state relative-caret-position="160">
+              <caret line="80" column="14" selection-start-line="80" selection-start-column="14" selection-end-line="80" selection-end-column="14" />
               <folding>
+                <element signature="imports" expanded="true" />
                 <element signature="e#920#921#0" expanded="true" />
                 <element signature="e#950#951#0" expanded="true" />
                 <element signature="e#995#996#0" expanded="true" />
@@ -229,7 +231,7 @@
       <workItem from="1546563160405" duration="90000" />
       <workItem from="1546893703176" duration="7331000" />
       <workItem from="1547586044075" duration="22000" />
-      <workItem from="1547681511453" duration="554000" />
+      <workItem from="1547681511453" duration="1576000" />
     </task>
     <task id="LOCAL-00001" summary="Created the form and GUI">
       <created>1544949755940</created>
@@ -294,11 +296,25 @@
       <option name="project" value="LOCAL" />
       <updated>1545204731437</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="idk">
+      <created>1547682076156</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1547682076156</updated>
+    </task>
+    <task id="LOCAL-00011" summary="fix close file">
+      <created>1547683071959</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1547683071959</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="58480000" />
+    <option name="totallyTimeSpent" value="59502000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -322,7 +338,7 @@
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.49932885" visible="true" weight="0.20425531" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49932885" weight="0.20425531" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.39574468" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -331,7 +347,7 @@
       <window_info anchor="bottom" id="Database Changes" order="8" show_stripe_button="false" />
       <window_info anchor="bottom" id="Terminal" order="9" weight="0.32765958" />
       <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.50067115" side_tool="true" weight="0.3319149" />
-      <window_info anchor="bottom" id="Messages" order="11" weight="0.24822696" />
+      <window_info active="true" anchor="bottom" id="Messages" order="11" visible="true" weight="0.24822696" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -383,7 +399,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Created the form and GUI" />
     <MESSAGE value="idk" />
-    <option name="LAST_COMMIT_MESSAGE" value="idk" />
+    <MESSAGE value="fix close file" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix close file" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/src/Main.java" />
@@ -445,9 +462,10 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/MainGUI.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="1" column="21" lean-forward="true" selection-start-line="1" selection-start-column="21" selection-end-line="1" selection-end-column="21" />
+        <state relative-caret-position="160">
+          <caret line="80" column="14" selection-start-line="80" selection-start-column="14" selection-end-line="80" selection-end-column="14" />
           <folding>
+            <element signature="imports" expanded="true" />
             <element signature="e#920#921#0" expanded="true" />
             <element signature="e#950#951#0" expanded="true" />
             <element signature="e#995#996#0" expanded="true" />

@@ -413,6 +413,7 @@ public class MainGUI{
     }
     public static void main(String[] args){                                     //driver function
         frame.setPreferredSize(new Dimension(800, 400));
+        frame.setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
         try{
             frame.setContentPane(new MainGUI(Integer.parseInt(args[0])).panel1);
         }catch(Exception Ex){
