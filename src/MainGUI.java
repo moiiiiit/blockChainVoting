@@ -83,7 +83,7 @@ public class MainGUI{
      * @param second
      * @param third CHARLES BOI YOU MIGHT NEED TO TWEAK THIS FUNCTION
      */
-    private void addToBlock(String str){                                        
+    private void addToBlock(String str){
         //OPEN THE CURRENTBLOCK FILE TO READ GUI INPUT AND PRINT TO FILE
         try{
             str = str + "\r\n";
@@ -168,14 +168,14 @@ public class MainGUI{
      * @throws FileNotFoundException
      */
     public MainGUI() throws SocketException, FileNotFoundException{
-        this(8080);
+        this(3535);
     }
     public MainGUI(int port) throws SocketException, FileNotFoundException{
         try{
             System.out.println("Opening servers");
-            me = new DatagramSocket(port + 8080);                               //this is so other machines can send to me
             this.port = port;
-            receiveBlocks = new DatagramSocket(port + 8080);
+            me = new DatagramSocket(port + 3535);                               //this is so other machines can send to me
+            receiveBlocks = new DatagramSocket(port + 4242 );
         }catch(Exception ex){
             System.out.println(ex.getMessage());
         }
@@ -260,7 +260,7 @@ public class MainGUI{
                 for(int j = 0; j < MaxNumberOfMachinesPerNetwork; ++j)
                     if(j != port)                                               //if it's not me
                         me.send(new DatagramPacket(data, data.length,           //send the vote
-                                InetAddress.getByName(ips[i]), 8080 + j));
+                                InetAddress.getByName(ips[i]), 3535 + j));
             }catch(Exception ex){
                 System.out.println(ex.getMessage());
             }
@@ -269,7 +269,6 @@ public class MainGUI{
     /**
      * Call this to receive votes from other machines and store them on my block
      * This is a server side function
-     *
      * @author Charles Jackson
      */
     public void receiveVotes(){
@@ -316,7 +315,7 @@ public class MainGUI{
                 for(int j = 0; j < MaxNumberOfMachinesPerNetwork; ++j)
                     if(j != port)                                               //if it's not me
                         me.send(new DatagramPacket(data, data.length,           //send the vote
-                                InetAddress.getByName(ips[i]), 8080 + j));
+                                InetAddress.getByName(ips[i]), 4242 + j));
             }catch(Exception ex){
                 System.out.println(ex.getMessage());
             }
@@ -347,7 +346,7 @@ public class MainGUI{
         for(int i = 0; i < ips.length; ++i)                                     //send my PPE to all other machines
             for(int j = 0; j < MaxNumberOfMachinesPerNetwork; ++j)
                 if(j != port)                                                   //if it's not me
-                    me.send(new DatagramPacket(toBytes(PPE), 8, InetAddress.getByName(ips[i]), j + 8080));
+                    me.send(new DatagramPacket(toBytes(PPE), 8, InetAddress.getByName(ips[i]), j + 4242));
         for(int i = 0; i < PPEs.length; ++i)                                    //receive PPE from all other machines
             try{
                 DatagramPacket o = new DatagramPacket(new byte[8], 8);
@@ -370,7 +369,7 @@ public class MainGUI{
                         for(int j = 0; j < MaxNumberOfMachinesPerNetwork; ++j)
                             if(j != port)                                       //if it's not me
                                 me.send(new DatagramPacket(data, data.length,   //send the vote
-                                        InetAddress.getByName(ips[i]), 8080 + j));
+                                        InetAddress.getByName(ips[i]), 4242 + j));
                     }catch(Exception ex){
                         System.out.println(ex.getMessage());
                     } //return my block
