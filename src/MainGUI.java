@@ -239,6 +239,10 @@ public class MainGUI{
                 dialog.open();
             }
         });
+
+        while(true){
+            receiveVotes();
+        }
     }
     /**
      * Call this function after someone has voted. It will copy the newest vote
@@ -421,6 +425,6 @@ public class MainGUI{
         frame.pack();
         numberOfCurrentVotes = 0;
         frame.setVisible(true);
-        System.out.println(EncryptionX.encrypt("159876325412119999985621521547856321453214589699999"));
+
     }
 }
