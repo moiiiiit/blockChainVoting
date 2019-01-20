@@ -83,7 +83,7 @@ public class MainGUI{
      * @param second
      * @param third CHARLES BOI YOU MIGHT NEED TO TWEAK THIS FUNCTION
      */
-    private void addToBlock(String str){
+    private void addToBlock(String str){                                        
         //OPEN THE CURRENTBLOCK FILE TO READ GUI INPUT AND PRINT TO FILE
         try{
             str = str + "\r\n";
@@ -173,7 +173,7 @@ public class MainGUI{
     public MainGUI(int port) throws SocketException, FileNotFoundException{
         try{
             System.out.println("Opening servers");
-            this.port = port;
+	    this.port = port;
             me = new DatagramSocket(port + 3535);                               //this is so other machines can send to me
             receiveBlocks = new DatagramSocket(port + 4242 );
         }catch(Exception ex){
@@ -184,7 +184,13 @@ public class MainGUI{
             comboBox2.addItem(s);
             comboBox3.addItem(s);
         }
-
+	Runnable r = new Runnable(){
+	    public void run(){
+		receiveVotes();
+	    }
+        };    
+	Thread receive = new Thread(r);
+	receive.start();
         submitVoteButton.addActionListener(new ActionListener(){
             @Override
             public void actionPerformed(ActionEvent e){
@@ -421,6 +427,5 @@ public class MainGUI{
         frame.pack();
         numberOfCurrentVotes = 0;
         frame.setVisible(true);
-
     }
 }
