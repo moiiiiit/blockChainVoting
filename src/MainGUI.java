@@ -58,7 +58,7 @@ public class MainGUI{
     private static int numberOfCurrentVotes;
     public final static int blockSize = 500;
     private final double threshold = .9;
-    private final int voteSize = 51;                                              //how many Characters is one vote
+    private final int voteSize = 88;                                              //how many Characters is one vote
     private final int MaxNumberOfMachinesPerNetwork = 10;
     private final int numberOfMachines = 4;
     private static boolean exit = false;
@@ -421,5 +421,6 @@ public class MainGUI{
         frame.pack();
         numberOfCurrentVotes = 0;
         frame.setVisible(true);
+        System.out.println(EncryptionX.encrypt("159876325412119999985621521547856321453214589699999"));
     }
 }
