@@ -239,10 +239,6 @@ public class MainGUI{
                 dialog.open();
             }
         });
-
-        while(true){
-            receiveVotes();
-        }
     }
     /**
      * Call this function after someone has voted. It will copy the newest vote
