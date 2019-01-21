@@ -290,6 +290,7 @@ public class MainGUI{
     public void receiveVotes(){
         while(true)                                                             //for all machines
             try{                                                                //try to get a vote from them
+                System.out.println("receiving vote");
                 DatagramPacket o = new DatagramPacket(new byte[voteSize], voteSize);
                 me.receive(o);                                                  //try to get information from connections
                 System.out.println("got vote");
