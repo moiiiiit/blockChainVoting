@@ -7,17 +7,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="46a5dc23-9988-40b9-8d2d-afa51e16d13a" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/blockChainVoting/Candidates.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/blockChainVoting/Candidates.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/blockChainVoting/MainGUI$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/blockChainVoting/MainGUI$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/blockChainVoting/MainGUI$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/blockChainVoting/MainGUI$2.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/blockChainVoting/MainGUI$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/blockChainVoting/MainGUI$3.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/blockChainVoting/MainGUI$4.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/blockChainVoting/MainGUI$4.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/blockChainVoting/MainGUI.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/blockChainVoting/MainGUI.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/blockChainVoting/com/intellij/uiDesigner/core/HorizontalInfo.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/blockChainVoting/com/intellij/uiDesigner/core/HorizontalInfo.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/blockChainVoting/com/intellij/uiDesigner/core/LayoutState.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/blockChainVoting/com/intellij/uiDesigner/core/LayoutState.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/blockChainVoting/com/intellij/uiDesigner/core/Util.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/blockChainVoting/com/intellij/uiDesigner/core/Util.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/blockChainVoting/com/intellij/uiDesigner/core/VerticalInfo.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/blockChainVoting/com/intellij/uiDesigner/core/VerticalInfo.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/currentBlock.txt" beforeDir="false" afterPath="$PROJECT_DIR$/currentBlock.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/blockChainVoting/CandidateNames.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/blockChainVoting/CandidateNames.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/blockChainVoting/EncryptionX.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/blockChainVoting/EncryptionX.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/blockChainVoting/calculateVotes.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/blockChainVoting/calculateVotes.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/MainGUI.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/MainGUI.form" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/MainGUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/MainGUI.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -26,6 +22,32 @@
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FUSProjectUsageTrigger">
+    <session id="-649473691">
+      <usages-collector id="statistics.file.extensions.edit">
+        <counts>
+          <entry key="java" value="22" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.types.edit">
+        <counts>
+          <entry key="JAVA" value="22" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.extensions.open">
+        <counts>
+          <entry key="form" value="1" />
+          <entry key="txt" value="1" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.types.open">
+        <counts>
+          <entry key="GUI_DESIGNER_FORM" value="1" />
+          <entry key="PLAIN_TEXT" value="1" />
+        </counts>
+      </usages-collector>
+    </session>
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
@@ -44,7 +66,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Candidates.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="272">
+            <state relative-caret-position="238">
               <caret line="16" column="23" selection-start-line="16" selection-start-column="23" selection-end-line="16" selection-end-column="23" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -61,10 +83,9 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/CalculateVotes.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="986">
-              <caret line="58" selection-start-line="58" selection-end-line="58" />
+            <state relative-caret-position="-238">
+              <caret line="1" column="56" selection-start-line="1" selection-start-column="56" selection-end-line="1" selection-end-column="56" />
               <folding>
-                <element signature="n#!!doc" expanded="true" />
                 <element signature="imports" expanded="true" />
               </folding>
             </state>
@@ -72,9 +93,18 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/currentBlock.txt">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="17">
+              <caret line="1" column="88" lean-forward="true" selection-start-line="1" selection-start-column="88" selection-end-line="1" selection-end-column="88" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/EncryptionX.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="646">
+            <state relative-caret-position="480">
               <caret line="38" selection-start-line="38" selection-end-line="38" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -86,28 +116,24 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/MainGUI.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-255">
-              <caret line="49" column="23" lean-forward="true" selection-start-line="49" selection-start-column="23" selection-end-line="49" selection-end-column="23" />
+            <state relative-caret-position="355">
+              <caret line="274" column="9" lean-forward="true" selection-start-line="274" selection-start-column="9" selection-end-line="274" selection-end-column="9" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#22684#22685#0" expanded="true" />
-                <element signature="e#22741#22742#0" expanded="true" />
+                <element signature="e#830#831#0" expanded="true" />
+                <element signature="e#860#861#0" expanded="true" />
+                <element signature="e#905#906#0" expanded="true" />
+                <element signature="e#937#938#0" expanded="true" />
+                <element signature="e#22111#22112#0" expanded="true" />
+                <element signature="e#22168#22169#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="jar://C:/Program Files/Java/jdk-11.0.2/lib/src.zip!/java.base/java/lang/String.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="10744">
-              <caret line="692" selection-start-line="692" selection-end-line="692" />
-              <folding>
-                <element signature="e#129243#129244#0" expanded="true" />
-                <element signature="e#129300#129301#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
+        <entry file="file://$PROJECT_DIR$/src/MainGUI.form">
+          <provider selected="true" editor-type-id="ui-designer" />
         </entry>
       </file>
     </leaf>
@@ -135,6 +161,10 @@
       <find>51</find>
       <find>catch</find>
       <find>constructor</find>
+      <find>reci</find>
+      <find>curren</find>
+      <find>current</find>
+      <find>addt</find>
     </findStrings>
     <replaceStrings>
       <replace>8080</replace>
@@ -164,10 +194,16 @@
       </list>
     </option>
   </component>
+  <component name="JsBuildToolGruntFileManager" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsBuildToolPackageJson" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsGulpfileManager">
+    <detection-done>true</detection-done>
+    <sorting>DEFINITION_ORDER</sorting>
+  </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="845" />
-    <option name="width" value="1940" />
-    <option name="height" value="1050" />
+    <option name="x" value="952" />
+    <option name="width" value="977" />
+    <option name="height" value="1038" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -175,14 +211,25 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="PackagesPane" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
             <path>
               <item name="blockChainVoting" type="b2602c69:ProjectViewProjectNode" />
               <item name="blockChainVoting" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="blockChainVoting" type="b2602c69:ProjectViewProjectNode" />
+              <item name="blockChainVoting" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="blockChainVoting" type="b2602c69:ProjectViewProjectNode" />
+              <item name="blockChainVoting" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="MainGUI.java" type="529ef68f:ClassesTreeStructureProvider$PsiClassOwnerTreeNode" />
             </path>
           </expand>
           <select />
@@ -219,7 +266,7 @@
     <configuration name="Main" type="Application" factoryName="Application" temporary="true">
       <option name="MAIN_CLASS_NAME" value="MainGUI" />
       <module name="blockChainVoting" />
-      <option name="PROGRAM_PARAMETERS" value="2" />
+      <option name="PROGRAM_PARAMETERS" value="0" />
       <RunnerSettings RunnerId="Run" />
       <ConfigurationWrapper RunnerId="Run" />
       <method v="2">
@@ -370,7 +417,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="77440000" />
+    <option name="totallyTimeSpent" value="78948000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -382,10 +429,10 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
+    <frame x="762" y="0" width="781" height="830" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.15637584" />
+      <window_info content_ui="combo" id="Project" order="0" weight="0.23439667" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -395,16 +442,16 @@
       <window_info id="Learn" order="7" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.49731544" visible="true" weight="0.20254958" />
-      <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.4986577" weight="0.39518413" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49731544" weight="0.20141844" />
+      <window_info active="true" anchor="bottom" id="Debug" order="3" sideWeight="0.4986577" visible="true" weight="0.30416068" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32907802" />
-      <window_info anchor="bottom" id="Version Control" order="7" sideWeight="0.4986577" weight="0.2082153" />
+      <window_info anchor="bottom" id="Version Control" order="7" sideWeight="0.4986577" weight="0.2070922" />
       <window_info anchor="bottom" id="Database Changes" order="8" show_stripe_button="false" />
       <window_info anchor="bottom" id="Terminal" order="9" weight="0.32765958" />
       <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.5013423" side_tool="true" weight="0.39518413" />
-      <window_info anchor="bottom" id="Messages" order="11" sideWeight="0.4986577" weight="0.24645892" />
+      <window_info anchor="bottom" id="Messages" order="11" sideWeight="0.4986577" weight="0.24539007" />
       <window_info anchor="bottom" id="Docker" order="12" show_stripe_button="false" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -463,6 +510,18 @@
     <MESSAGE value="fixed sending to machines on the same private network.&#10;re-enabled automatic receiving." />
     <option name="LAST_COMMIT_MESSAGE" value="fixed sending to machines on the same private network.&#10;re-enabled automatic receiving." />
   </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/MainGUI.java</url>
+          <line>306</line>
+          <properties />
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/src/Main.java" />
     <entry file="file://$PROJECT_DIR$/src/cutesprayavatars-junkrat_ow_jp_400x400_png_jpgcopy.jpg" />
@@ -470,12 +529,6 @@
     <entry file="file://$PROJECT_DIR$/src/MyComboBoxRenderer.java" />
     <entry file="file://$PROJECT_DIR$/src/Candidates.form">
       <provider selected="true" editor-type-id="ui-designer" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/MainGUI.form">
-      <provider selected="true" editor-type-id="ui-designer" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/currentBlock.txt">
-      <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/README.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
@@ -489,8 +542,32 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Candidates.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
+        <state relative-caret-position="238">
           <caret line="16" column="23" selection-start-line="16" selection-start-column="23" selection-end-line="16" selection-end-column="23" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk-11.0.2/lib/src.zip!/java.base/java/lang/String.java" />
+    <entry file="file://$PROJECT_DIR$/src/MainGUI.form">
+      <provider selected="true" editor-type-id="ui-designer" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/EncryptionX.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="480">
+          <caret line="38" selection-start-line="38" selection-end-line="38" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/CalculateVotes.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-238">
+          <caret line="1" column="56" selection-start-line="1" selection-start-column="56" selection-end-line="1" selection-end-column="56" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -500,46 +577,25 @@
     <entry file="file://$PROJECT_DIR$/blockChain.txt">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/CalculateVotes.java">
+    <entry file="file://$PROJECT_DIR$/currentBlock.txt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="986">
-          <caret line="58" selection-start-line="58" selection-end-line="58" />
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/EncryptionX.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="646">
-          <caret line="38" selection-start-line="38" selection-end-line="38" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://C:/Program Files/Java/jdk-11.0.2/lib/src.zip!/java.base/java/lang/String.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="10744">
-          <caret line="692" selection-start-line="692" selection-end-line="692" />
-          <folding>
-            <element signature="e#129243#129244#0" expanded="true" />
-            <element signature="e#129300#129301#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="17">
+          <caret line="1" column="88" lean-forward="true" selection-start-line="1" selection-start-column="88" selection-end-line="1" selection-end-column="88" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/MainGUI.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-255">
-          <caret line="49" column="23" lean-forward="true" selection-start-line="49" selection-start-column="23" selection-end-line="49" selection-end-column="23" />
+        <state relative-caret-position="355">
+          <caret line="274" column="9" lean-forward="true" selection-start-line="274" selection-start-column="9" selection-end-line="274" selection-end-column="9" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#22684#22685#0" expanded="true" />
-            <element signature="e#22741#22742#0" expanded="true" />
+            <element signature="e#830#831#0" expanded="true" />
+            <element signature="e#860#861#0" expanded="true" />
+            <element signature="e#905#906#0" expanded="true" />
+            <element signature="e#937#938#0" expanded="true" />
+            <element signature="e#22111#22112#0" expanded="true" />
+            <element signature="e#22168#22169#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -587,7 +643,7 @@
       </state>
       <state key="JdkListConfigurable.UI">
         <settings>
-          <last-edited>11</last-edited>
+          <last-edited>1.8</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>

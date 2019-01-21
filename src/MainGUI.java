@@ -52,7 +52,6 @@ public class MainGUI{
     private JComboBox comboBox1;
     private JComboBox comboBox2;
     private JComboBox comboBox3;
-    private JButton Recieve;
     private static JFrame frame = new JFrame("BlockChain Voting");
     private static int numberOfCurrentVotes;
     public final static int blockSize = 500;
@@ -64,7 +63,7 @@ public class MainGUI{
     private final String myIp="70.121.56.92";                                                   //the public ip of the network private network I'm in
     private int port;
     private final String[] networks = {"70.121.56.92"};                                            //the public ip of every private network including my own
-    private final String[] privates = {"192.168.1.50", "192.168.1.50", "192.168.1.51"};                           //a list of all the private ip addresses on my network except my own
+    private final String[] privates = {"192.168.1.50", "192.168.1.51", "192.168.1.52"};                           //a list of all the private ip addresses on my network except my own
     private DatagramSocket me;                                                  //this is to get connected to other machines and recieve things from them
     private DatagramSocket receiveBlocks;
 
@@ -267,8 +266,8 @@ public class MainGUI{
             else
                 for(int j = 0; j < privates.length; ++j)          //for all machines on every network
                     try{
-                        if(j==port) continue;
-                        me.send(new DatagramPacket(data, data.length,           //send the vote
+                        if(j!=port)
+                            me.send(new DatagramPacket(data, data.length,           //send the vote
                                 InetAddress.getByName(privates[i]), 3535 + j));
                     }catch(Exception ex){
                         System.out.println(ex+": "+ex.getMessage());
@@ -304,7 +303,7 @@ public class MainGUI{
                 byte[] data = o.getData();
                 String vote = "";
                 for(int j = 0; j < voteSize; ++j)                               //get the vote
-                    vote += "" + data[j];                                       //and write it to my block
+                    vote += "" + (char)data[j];                                       //and write it to my block
                 addToBlock(vote);
             }catch(SocketTimeoutException tm){
                 break;                                                          //exit function if there are no more connections
