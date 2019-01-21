@@ -64,7 +64,7 @@ public class MainGUI{
     private final String myIp="70.121.56.92";                                                   //the public ip of the network private network I'm in
     private int port;
     private final String[] networks = {"70.121.56.92"};                                            //the public ip of every private network including my own
-    private final String[] privates = {};                                                   //a list of all the private ip addresses on my network except my own
+    private final String[] privates = {"192.168.1.50", "192.168.1.50", "192.168.1.51"};                           //a list of all the private ip addresses on my network except my own
     private DatagramSocket me;                                                  //this is to get connected to other machines and recieve things from them
     private DatagramSocket receiveBlocks;
 

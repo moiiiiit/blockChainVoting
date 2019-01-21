@@ -7,9 +7,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="46a5dc23-9988-40b9-8d2d-afa51e16d13a" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/currentBlock.txt" beforeDir="false" afterPath="$PROJECT_DIR$/currentBlock.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/blockChainVoting/Candidates.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/blockChainVoting/Candidates.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/blockChainVoting/MainGUI$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/blockChainVoting/MainGUI$1.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/blockChainVoting/MainGUI$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/blockChainVoting/MainGUI$2.class" afterDir="false" />
@@ -88,12 +86,10 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/MainGUI.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="593">
-              <caret line="442" lean-forward="true" selection-start-line="442" selection-end-line="442" />
+            <state relative-caret-position="-255">
+              <caret line="49" column="23" lean-forward="true" selection-start-line="49" selection-start-column="23" selection-end-line="49" selection-end-column="23" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#8161#8162#0" expanded="true" />
-                <element signature="e#8207#8208#0" expanded="true" />
                 <element signature="e#22684#22685#0" expanded="true" />
                 <element signature="e#22741#22742#0" expanded="true" />
               </folding>
@@ -256,7 +252,7 @@
       <workItem from="1547735461295" duration="1810000" />
       <workItem from="1547944521872" duration="5172000" />
       <workItem from="1548108556858" duration="1403000" />
-      <workItem from="1548110075705" duration="1021000" />
+      <workItem from="1548110075705" duration="1291000" />
     </task>
     <task id="LOCAL-00001" summary="Created the form and GUI">
       <created>1544949755940</created>
@@ -363,11 +359,18 @@
       <option name="project" value="LOCAL" />
       <updated>1548100384808</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="fixed sending to machines on the same private network.&#10;re-enabled automatic receiving.">
+      <created>1548111266217</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1548111266217</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="77170000" />
+    <option name="totallyTimeSpent" value="77440000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -382,7 +385,7 @@
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.15637584" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.15637584" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -392,7 +395,7 @@
       <window_info id="Learn" order="7" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49731544" weight="0.20254958" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.49731544" visible="true" weight="0.20254958" />
       <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.4986577" weight="0.39518413" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -457,7 +460,8 @@
     <MESSAGE value="undo" />
     <MESSAGE value="fixed receiving and exceptions [charles]" />
     <MESSAGE value="recieve button" />
-    <option name="LAST_COMMIT_MESSAGE" value="recieve button" />
+    <MESSAGE value="fixed sending to machines on the same private network.&#10;re-enabled automatic receiving." />
+    <option name="LAST_COMMIT_MESSAGE" value="fixed sending to machines on the same private network.&#10;re-enabled automatic receiving." />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/src/Main.java" />
@@ -530,12 +534,10 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/MainGUI.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="593">
-          <caret line="442" lean-forward="true" selection-start-line="442" selection-end-line="442" />
+        <state relative-caret-position="-255">
+          <caret line="49" column="23" lean-forward="true" selection-start-line="49" selection-start-column="23" selection-end-line="49" selection-end-column="23" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#8161#8162#0" expanded="true" />
-            <element signature="e#8207#8208#0" expanded="true" />
             <element signature="e#22684#22685#0" expanded="true" />
             <element signature="e#22741#22742#0" expanded="true" />
           </folding>
