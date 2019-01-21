@@ -268,7 +268,7 @@ public class MainGUI{
                     try{
                         if(j!=port)
                             me.send(new DatagramPacket(data, data.length,           //send the vote
-                                InetAddress.getByName(privates[i]), 3535 + j));
+                                InetAddress.getByName(privates[j]), 3535 + j));
                     }catch(Exception ex){
                         System.out.println(ex+": "+ex.getMessage());
                     }
@@ -297,9 +297,10 @@ public class MainGUI{
     public void receiveVotes(){
         while(true)                                                             //for all machines
             try{                                                                //try to get a vote from them
+                System.out.print("");
                 DatagramPacket o = new DatagramPacket(new byte[voteSize], voteSize);
                 me.receive(o);                                                  //try to get information from connections
-                System.out.println("got vote");
+                System.out.println("\ngot vote");
                 byte[] data = o.getData();
                 String vote = "";
                 for(int j = 0; j < voteSize; ++j)                               //get the vote

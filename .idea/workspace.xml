@@ -7,13 +7,17 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="46a5dc23-9988-40b9-8d2d-afa51e16d13a" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/currentBlock.txt" beforeDir="false" afterPath="$PROJECT_DIR$/currentBlock.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/blockChainVoting/CandidateNames.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/blockChainVoting/CandidateNames.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/blockChainVoting/EncryptionX.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/blockChainVoting/EncryptionX.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/blockChainVoting/calculateVotes.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/blockChainVoting/calculateVotes.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/MainGUI.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/MainGUI.form" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/blockChainVoting/Candidates.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/blockChainVoting/Candidates.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/blockChainVoting/MainGUI$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/blockChainVoting/MainGUI$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/blockChainVoting/MainGUI$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/blockChainVoting/MainGUI$2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/blockChainVoting/MainGUI$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/blockChainVoting/MainGUI$3.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/blockChainVoting/MainGUI$4.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/blockChainVoting/MainGUI$4.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/blockChainVoting/MainGUI.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/blockChainVoting/MainGUI.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/blockChainVoting/com/intellij/uiDesigner/core/HorizontalInfo.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/blockChainVoting/com/intellij/uiDesigner/core/HorizontalInfo.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/blockChainVoting/com/intellij/uiDesigner/core/LayoutState.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/blockChainVoting/com/intellij/uiDesigner/core/LayoutState.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/blockChainVoting/com/intellij/uiDesigner/core/Util.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/blockChainVoting/com/intellij/uiDesigner/core/Util.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/blockChainVoting/com/intellij/uiDesigner/core/VerticalInfo.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/blockChainVoting/com/intellij/uiDesigner/core/VerticalInfo.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/MainGUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/MainGUI.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -27,12 +31,14 @@
     <session id="-649473691">
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="java" value="22" />
+          <entry key="java" value="43" />
+          <entry key="txt" value="13" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="JAVA" value="22" />
+          <entry key="JAVA" value="43" />
+          <entry key="PLAIN_TEXT" value="13" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
@@ -92,13 +98,9 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/currentBlock.txt">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="17">
-              <caret line="1" column="88" lean-forward="true" selection-start-line="1" selection-start-column="88" selection-end-line="1" selection-end-column="88" />
-            </state>
-          </provider>
+          <provider selected="true" editor-type-id="text-editor" />
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
@@ -113,11 +115,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/MainGUI.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="355">
-              <caret line="274" column="9" lean-forward="true" selection-start-line="274" selection-start-column="9" selection-end-line="274" selection-end-column="9" />
+            <state relative-caret-position="207">
+              <caret line="304" column="33" lean-forward="true" selection-start-line="304" selection-start-column="33" selection-end-line="304" selection-end-column="33" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#830#831#0" expanded="true" />
@@ -189,8 +191,8 @@
         <option value="$PROJECT_DIR$/src/CalculateVotes.java" />
         <option value="$PROJECT_DIR$/blockChain.txt" />
         <option value="$PROJECT_DIR$/src/MainGUI.form" />
-        <option value="$PROJECT_DIR$/currentBlock.txt" />
         <option value="$PROJECT_DIR$/src/MainGUI.java" />
+        <option value="$PROJECT_DIR$/currentBlock.txt" />
       </list>
     </option>
   </component>
@@ -242,7 +244,7 @@
     <property name="UI_DESIGNER_EDITOR_MODE.UIDesignerToolWindowManager.WIDTH" value="314" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1548103928058" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1548114489299" />
     <property name="last_opened_file_path" value="$USER_HOME$/PycharmProjects/learning" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="project.structure.last.edited" value="Project" />
@@ -413,11 +415,18 @@
       <option name="project" value="LOCAL" />
       <updated>1548111266217</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="working thing">
+      <created>1548113075309</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1548113075309</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="78948000" />
+    <option name="totallyTimeSpent" value="80464000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -429,7 +438,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="762" y="0" width="781" height="830" extended-state="0" />
+    <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" weight="0.23439667" />
@@ -442,8 +451,8 @@
       <window_info id="Learn" order="7" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49731544" weight="0.20141844" />
-      <window_info active="true" anchor="bottom" id="Debug" order="3" sideWeight="0.4986577" visible="true" weight="0.30416068" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.49731544" visible="true" weight="0.19858156" />
+      <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.4986577" weight="0.35460994" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32907802" />
@@ -508,14 +517,15 @@
     <MESSAGE value="fixed receiving and exceptions [charles]" />
     <MESSAGE value="recieve button" />
     <MESSAGE value="fixed sending to machines on the same private network.&#10;re-enabled automatic receiving." />
-    <option name="LAST_COMMIT_MESSAGE" value="fixed sending to machines on the same private network.&#10;re-enabled automatic receiving." />
+    <MESSAGE value="working thing" />
+    <option name="LAST_COMMIT_MESSAGE" value="working thing" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/MainGUI.java</url>
-          <line>306</line>
+          <line>307</line>
           <properties />
           <option name="timeStamp" value="2" />
         </line-breakpoint>
@@ -554,16 +564,6 @@
     <entry file="file://$PROJECT_DIR$/src/MainGUI.form">
       <provider selected="true" editor-type-id="ui-designer" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/EncryptionX.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="480">
-          <caret line="38" selection-start-line="38" selection-end-line="38" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/CalculateVotes.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-238">
@@ -574,20 +574,23 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/blockChain.txt">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/currentBlock.txt">
+    <entry file="file://$PROJECT_DIR$/src/EncryptionX.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="1" column="88" lean-forward="true" selection-start-line="1" selection-start-column="88" selection-end-line="1" selection-end-column="88" />
+        <state relative-caret-position="480">
+          <caret line="38" selection-start-line="38" selection-end-line="38" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/blockChain.txt">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/MainGUI.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="355">
-          <caret line="274" column="9" lean-forward="true" selection-start-line="274" selection-start-column="9" selection-end-line="274" selection-end-column="9" />
+        <state relative-caret-position="207">
+          <caret line="304" column="33" lean-forward="true" selection-start-line="304" selection-start-column="33" selection-end-line="304" selection-end-column="33" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#830#831#0" expanded="true" />
@@ -599,6 +602,9 @@
           </folding>
         </state>
       </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/currentBlock.txt">
+      <provider selected="true" editor-type-id="text-editor" />
     </entry>
   </component>
   <component name="masterDetails">
