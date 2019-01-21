@@ -53,6 +53,7 @@ public class MainGUI{
     private JComboBox comboBox1;
     private JComboBox comboBox2;
     private JComboBox comboBox3;
+    private JButton Recieve;
     private static JFrame frame = new JFrame("BlockChain Voting");
     private static int numberOfCurrentVotes;
     public final static int blockSize = 500;
@@ -166,6 +167,12 @@ public class MainGUI{
      */
     public MainGUI() throws SocketException, FileNotFoundException{
         this(3535);
+        Recieve.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                receiveVotes();
+            }
+        });
     }
     public MainGUI(int port) throws SocketException, FileNotFoundException{
         try{
@@ -183,13 +190,13 @@ public class MainGUI{
             comboBox2.addItem(s);
             comboBox3.addItem(s);
         }
-	Runnable r = new Runnable(){
+	/*Runnable r = new Runnable(){
 	    public void run() {
 	        while(true) {
                 receiveVotes();
             }
         }
-    };
+    };*/
 	Thread receive = new Thread(r);
 	receive.start();
         submitVoteButton.addActionListener(new ActionListener(){
