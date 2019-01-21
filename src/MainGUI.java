@@ -1,4 +1,3 @@
-import com.sun.xml.internal.ws.wsdl.parser.MexEntityResolver;
 import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -78,10 +77,7 @@ public class MainGUI{
 
     /**
      * adds data from form to currentblock.txt
-     * @param voterID
-     * @param first
-     * @param second
-     * @param third CHARLES BOI YOU MIGHT NEED TO TWEAK THIS FUNCTION
+     * @param str is the encrypted vote
      */
     private void addToBlock(String str){                                        
         //OPEN THE CURRENTBLOCK FILE TO READ GUI INPUT AND PRINT TO FILE
@@ -92,12 +88,13 @@ public class MainGUI{
             try{
                 writer.write(encryptedStr);
             }catch(IOException e){
+
                 return;
             }
             try{
                 writer.close();
-            }catch(Exception closee){
-
+            }catch(Exception ex){
+                System.out.println(ex+": "+ex.getMessage());
             }
         }catch(FileNotFoundException e){
             File file = new File("currentBlock.txt");
@@ -137,7 +134,7 @@ public class MainGUI{
 
                 //add
             }catch(Exception ex){
-                System.out.println(ex.getMessage());
+                System.out.println(ex+": "+ex.getMessage());
             }
         /*try {
                 CalculateVotes.countVotes("blockChain.txt");
@@ -161,7 +158,7 @@ public class MainGUI{
         }
     }
     /**
-     * CONSTRUCTOR Establishes connection between all machines
+     * CONSTRUCTOR Start server for other machines to send votes to
      *
      *
      * @throws SocketException
@@ -175,9 +172,11 @@ public class MainGUI{
             System.out.println("Opening servers");
 	    this.port = port;
             me = new DatagramSocket(port + 3535);                               //this is so other machines can send to me
+            me.setSoTimeout(40);
             receiveBlocks = new DatagramSocket(port + 4242 );
+            receiveBlocks.setSoTimeout(40);
         }catch(Exception ex){
-            System.out.println(ex.getMessage());
+            System.out.println(ex+": "+ex.getMessage());
         }
         for(CandidateNames s : CandidateNames.values()){
             comboBox1.addItem(s);
@@ -185,10 +184,12 @@ public class MainGUI{
             comboBox3.addItem(s);
         }
 	Runnable r = new Runnable(){
-	    public void run(){
-		receiveVotes();
-	    }
-        };    
+	    public void run() {
+	        while(true) {
+                receiveVotes();
+            }
+        }
+    };
 	Thread receive = new Thread(r);
 	receive.start();
         submitVoteButton.addActionListener(new ActionListener(){
@@ -256,6 +257,7 @@ public class MainGUI{
      * @author Charles Jackson
      */
     public void shareVote(String vote){
+        System.out.println("sending vote...");
         if(vote.length() != voteSize)
             throw new IllegalArgumentException("Vote must be " + voteSize + " characters");
         for(int i = 0; i < ips.length; ++i){                                    //for all other machines
@@ -268,9 +270,10 @@ public class MainGUI{
                         me.send(new DatagramPacket(data, data.length,           //send the vote
                                 InetAddress.getByName(ips[i]), 3535 + j));
             }catch(Exception ex){
-                System.out.println(ex.getMessage());
+                System.out.println(ex+": "+ex.getMessage());
             }
         }
+        System.out.println("vote send");
     }
     /**
      * Call this to receive votes from other machines and store them on my block
@@ -281,16 +284,17 @@ public class MainGUI{
         while(true)                                                             //for all machines
             try{                                                                //try to get a vote from them
                 DatagramPacket o = new DatagramPacket(new byte[voteSize], voteSize);
-                me.receive(o);                                                  //try to get infromation from connections
+                me.receive(o);                                                  //try to get information from connections
                 byte[] data = o.getData();
                 String vote = "";
                 for(int j = 0; j < voteSize; ++j)                               //get the vote
                     vote += "" + data[j];                                       //and write it to my block
                 addToBlock(vote);
             }catch(SocketTimeoutException tm){
+                System.out.println("received all votes");
                 break;                                                          //exit function if there are no more connections
             }catch(Exception ex){
-                System.out.println(ex.getMessage());
+                System.out.println(ex+": "+ex.getMessage());
             }
     }
     /**
@@ -323,7 +327,7 @@ public class MainGUI{
                         me.send(new DatagramPacket(data, data.length,           //send the vote
                                 InetAddress.getByName(ips[i]), 4242 + j));
             }catch(Exception ex){
-                System.out.println(ex.getMessage());
+                System.out.println(ex+": "+ex.getMessage());
             }
         //recieve sorted blocks from other machines
         for(int i = 0; i < blocks.length; ++i)
@@ -335,9 +339,10 @@ public class MainGUI{
                     for(int k = 0; k < voteSize; ++k)
                         blocks[i][i] += o.getData()[j * k];
             }catch(SocketTimeoutException tm){                                  //if no one is responding
+                System.out.println("no blocks at the moment");
                 continue;                                                       //continue to the next step
             }catch(Exception ex){
-                System.out.println(ex.getMessage());
+                System.out.println(ex+": "+ex.getMessage());
             }
         double PPE = 0;
         for(int i = 0; i < blocks.length; ++i){                                 //for all other blocks
@@ -359,9 +364,10 @@ public class MainGUI{
                 receiveBlocks.receive(o);
                 PPEs[i] = toDouble(o.getData());                                //get PPE
             }catch(SocketTimeoutException tm){                                  //if no one is responding
+                System.out.println("no more PPEs");
                 break;                                                          //continue to the next step
             }catch(Exception ex){
-                System.out.println(ex.getMessage());
+                System.out.println(ex+": "+ex.getMessage());
             }
         double percentError = PPE;
         for(int i = 0; i < PPEs.length; ++i)                                    //sum all the PPEs
@@ -377,7 +383,7 @@ public class MainGUI{
                                 me.send(new DatagramPacket(data, data.length,   //send the vote
                                         InetAddress.getByName(ips[i]), 4242 + j));
                     }catch(Exception ex){
-                        System.out.println(ex.getMessage());
+                        System.out.println(ex+": "+ex.getMessage());
                     } //return my block
             else                                                                //else I need a non-corrupted block
                 try{                                                            //receive a < 90% error block from another machine
@@ -388,7 +394,7 @@ public class MainGUI{
                         for(int j = 0; j < voteSize; ++j)
                             myBlock[i] += o.getData()[i * j];
                 }catch(Exception ex){
-                    System.out.println(ex.getMessage());
+                    System.out.println(ex+": "+ex.getMessage());
                 } //return the good block
         else{                                                                   //else this block is going to be trashed
             myBlock = null;                                                     //trash this block
@@ -401,9 +407,10 @@ public class MainGUI{
                         new byte[blockSize * voteSize], blockSize * voteSize);
                 receiveBlocks.receive(o);                                       //receive one block
             }catch(SocketTimeoutException tm){                                  //if no one is responding
+                System.out.println("no more blocks");
                 continue;                                                       //continue to the next step
             }catch(Exception ex){
-                System.out.println(ex.getMessage());
+                System.out.println(ex+": "+ex.getMessage());
             }
         return myBlock;
     }
