@@ -6,7 +6,6 @@ import java.io.*;
 import java.net.*;
 import java.nio.channels.FileChannel;
 import java.nio.ByteBuffer;
-import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Scanner;
 
@@ -62,9 +61,10 @@ public class MainGUI{
     private final int MaxNumberOfMachinesPerNetwork = 10;
     private final int numberOfMachines = 4;
     private static boolean exit = false;
-    private String myIp = "70.121.56.92";                                       //the public ip of the network private network I'm in
+    private final String myIp="70.121.56.92";                                                   //the public ip of the network private network I'm in
     private int port;
-    private String[] ips = {"70.121.56.92"};                                            //the public ip of every private network including my own
+    private final String[] networks = {"70.121.56.92"};                                            //the public ip of every private network including my own
+    private final String[] privates = {};                                                   //a list of all the private ip addresses on my network except my own
     private DatagramSocket me;                                                  //this is to get connected to other machines and recieve things from them
     private DatagramSocket receiveBlocks;
 
@@ -167,17 +167,12 @@ public class MainGUI{
      */
     public MainGUI() throws SocketException, FileNotFoundException{
         this(3535);
-        Recieve.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                receiveVotes();
-            }
-        });
+
     }
     public MainGUI(int port) throws SocketException, FileNotFoundException{
         try{
             System.out.println("Opening servers");
-	    this.port = port;
+            this.port=port;
             me = new DatagramSocket(port + 3535);                               //this is so other machines can send to me
             me.setSoTimeout(40);
             receiveBlocks = new DatagramSocket(port + 4242 );
@@ -190,15 +185,15 @@ public class MainGUI{
             comboBox2.addItem(s);
             comboBox3.addItem(s);
         }
-	/*Runnable r = new Runnable(){
-	    public void run() {
-	        while(true) {
-                receiveVotes();
+        Runnable r = new Runnable(){
+            public void run() {
+                while(true) {
+                    receiveVotes();
+                }
             }
-        }
-    };*/
-	Thread receive = new Thread(r);
-	receive.start();
+        };
+        Thread receive = new Thread(r);
+        receive.start();
         submitVoteButton.addActionListener(new ActionListener(){
             @Override
             public void actionPerformed(ActionEvent e){
@@ -254,6 +249,32 @@ public class MainGUI{
             }
         });
     }
+
+    /**
+     *  Sends data to all other machines
+     * @param data to be sent
+     */
+    public void sendToAll(byte[] data){
+        for(int i = 0; i < networks.length; ++i){                                    //for all networks
+            if(!networks[i].equals(myIp))
+                for(int j = 0; j < MaxNumberOfMachinesPerNetwork; ++j)          //for all machines on every network
+                    try{
+                        me.send(new DatagramPacket(data, data.length,           //send the vote
+                                InetAddress.getByName(networks[i]), 3535 + j));
+                    }catch(Exception ex){
+                        System.out.println(ex+": "+ex.getMessage());
+                    }
+            else
+                for(int j = 0; j < privates.length; ++j)          //for all machines on every network
+                    try{
+                        if(j==port) continue;
+                        me.send(new DatagramPacket(data, data.length,           //send the vote
+                                InetAddress.getByName(privates[i]), 3535 + j));
+                    }catch(Exception ex){
+                        System.out.println(ex+": "+ex.getMessage());
+                    }
+        }
+    }
     /**
      * Call this function after someone has voted. It will copy the newest vote
      * to all other voting machines. This is a client side function
@@ -267,20 +288,7 @@ public class MainGUI{
         System.out.println("sending vote...");
         if(vote.length() != voteSize)
             throw new IllegalArgumentException("Vote must be " + voteSize + " characters");
-        for(int i = 0; i < ips.length; ++i){                                    //for all other machines
-            byte[] data = new byte[voteSize];                                   //cast vote to a byte array
-            for(int j = 0; j < voteSize; ++j)
-                data[j] = (byte) vote.charAt(j);
-            try{
-                for(int j = 0; j < MaxNumberOfMachinesPerNetwork; ++j)
-                    if(j != port)                                               //if it's not me
-                        me.send(new DatagramPacket(data, data.length,           //send the vote
-                                InetAddress.getByName(ips[i]), 3535 + j));
-            }catch(Exception ex){
-                System.out.println(ex+": "+ex.getMessage());
-            }
-        }
-        System.out.println("vote send");
+        sendToAll(vote.getBytes());
     }
     /**
      * Call this to receive votes from other machines and store them on my block
@@ -290,7 +298,6 @@ public class MainGUI{
     public void receiveVotes(){
         while(true)                                                             //for all machines
             try{                                                                //try to get a vote from them
-                System.out.println("receiving vote");
                 DatagramPacket o = new DatagramPacket(new byte[voteSize], voteSize);
                 me.receive(o);                                                  //try to get information from connections
                 System.out.println("got vote");
@@ -318,7 +325,7 @@ public class MainGUI{
     public String[] getNextBlock() throws CorruptedBlockException, FileNotFoundException, IOException{
         Scanner myBlockFile = new Scanner(new File("currentBlock.txt"));        //for reading in my block from a file
         String[] myBlock = new String[blockSize];                               //to store my block
-        String[][] blocks = new String[ips.length][blockSize];                  //for storing the blocks for machines other than my own [machine][a vote in that machine's block]
+        String[][] blocks = new String[networks.length][blockSize];                  //for storing the blocks for machines other than my own [machine][a vote in that machine's block]
         for(int i = 0; myBlockFile.hasNextLine(); ++i)
             myBlock[i] = myBlockFile.nextLine().trim();
         myBlockFile.close();
@@ -328,16 +335,8 @@ public class MainGUI{
             for(int j = 0; j < myBlock.length; ++j)
                 data[i] = (byte) myBlock[i].charAt(i);
         //send my sorted block to all machines
-        for(int i = 0; i < ips.length; i++)                                     //for every network
-            try{                                                                //send my sorted block
-                for(int j = 0; j < MaxNumberOfMachinesPerNetwork; ++j)
-                    if(j != port)                                               //if it's not me
-                        me.send(new DatagramPacket(data, data.length,           //send the vote
-                                InetAddress.getByName(ips[i]), 4242 + j));
-            }catch(Exception ex){
-                System.out.println(ex+": "+ex.getMessage());
-            }
-        //recieve sorted blocks from other machines
+        sendToAll(data);
+        //receive sorted blocks from other machines
         for(int i = 0; i < blocks.length; ++i)
             try{
                 DatagramPacket o = new DatagramPacket(                          //to receive blocks from others
@@ -361,11 +360,8 @@ public class MainGUI{
             PPE += errorCount / (double) blockSize;                             //keep a sum of the average difference between my block and other blocks
         }
         PPE /= (double) blocks.length;                                          //sum of the averages ÷ number blocks gotten from other machines(AKA number of other machines) = my Personal Percent Error
-        double[] PPEs = new double[ips.length];                                 //error in PPE[i] is associated with machine with socket[i]
-        for(int i = 0; i < ips.length; ++i)                                     //send my PPE to all other machines
-            for(int j = 0; j < MaxNumberOfMachinesPerNetwork; ++j)
-                if(j != port)                                                   //if it's not me
-                    me.send(new DatagramPacket(toBytes(PPE), 8, InetAddress.getByName(ips[i]), j + 4242));
+        double[] PPEs = new double[networks.length];                                 //error in PPE[i] is associated with machine with socket[i]
+        sendToAll(toBytes(PPE));                                                //send my PPE to everyone
         for(int i = 0; i < PPEs.length; ++i)                                    //receive PPE from all other machines
             try{
                 DatagramPacket o = new DatagramPacket(new byte[8], 8);
@@ -384,15 +380,8 @@ public class MainGUI{
         if(percentError >= threshold)                                           //if 90% of machines are ≥ 90% then add the
             if(PPE < threshold)                                                 //if my PPE is < 90% then my block is good and I should share it and return it
                 //send my good block to corrupted machines(AKA all machines)
-                for(int i = 0; i < ips.length; i++)                             //for every network
-                    try{
-                        for(int j = 0; j < MaxNumberOfMachinesPerNetwork; ++j)
-                            if(j != port)                                       //if it's not me
-                                me.send(new DatagramPacket(data, data.length,   //send the vote
-                                        InetAddress.getByName(ips[i]), 4242 + j));
-                    }catch(Exception ex){
-                        System.out.println(ex+": "+ex.getMessage());
-                    } //return my block
+                sendToAll(data);
+                                                                                //return my block
             else                                                                //else I need a non-corrupted block
                 try{                                                            //receive a < 90% error block from another machine
                     DatagramPacket o = new DatagramPacket(                      //to receive blocks from others
@@ -406,7 +395,7 @@ public class MainGUI{
                 } //return the good block
         else{                                                                   //else this block is going to be trashed
             myBlock = null;                                                     //trash this block
-            throw new CorruptedBlockException();                                //throw error messege of trashed block
+            throw new CorruptedBlockException();                                //throw error message of trashed block
         }
         //flush out the data stream
         for(int i = 0; i < numberOfMachines; ++i)
