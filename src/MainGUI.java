@@ -285,13 +285,13 @@ public class MainGUI{
             try{                                                                //try to get a vote from them
                 DatagramPacket o = new DatagramPacket(new byte[voteSize], voteSize);
                 me.receive(o);                                                  //try to get information from connections
+                System.out.println("got vote");
                 byte[] data = o.getData();
                 String vote = "";
                 for(int j = 0; j < voteSize; ++j)                               //get the vote
                     vote += "" + data[j];                                       //and write it to my block
                 addToBlock(vote);
             }catch(SocketTimeoutException tm){
-                System.out.println("received all votes");
                 break;                                                          //exit function if there are no more connections
             }catch(Exception ex){
                 System.out.println(ex+": "+ex.getMessage());
