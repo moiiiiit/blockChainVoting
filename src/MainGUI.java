@@ -54,8 +54,8 @@ public class MainGUI{
     private JComboBox comboBox3;
     private static JFrame frame = new JFrame("BlockChain Voting");
     private static int numberOfCurrentVotes;
-    public final static int blockSize = 500;
-    private final double threshold = .9;
+    public final static int blockSize = 7;
+    private final double threshold = .5;
     private final int voteSize = 88;                                              //how many Characters is one vote
     private final int MaxNumberOfMachinesPerNetwork = 10;
     private final int numberOfMachines = 4;
@@ -76,7 +76,8 @@ public class MainGUI{
     }
 
     /**
-     * adds data from form to currentblock.txt
+     * adds data from one vote to currentblock.txt
+     * and checks to see if the currentblock should be added to the blockChain
      * @param str is the encrypted vote
      */
     private void addToBlock(String str){                                        
@@ -157,10 +158,10 @@ public class MainGUI{
             destiChannel.close();
         }
     }
-    /**
-     * CONSTRUCTOR Start server for other machines to send votes to
-     *
-     *
+    /**CONSTRUCTOR
+     * Start server for other machines to send votes to
+     * starts up a window for users to enter their vote
+     * @param port the number of the computer that is connected to this network. the first computer should be 0, second computer should be 1, etc...
      * @throws SocketException
      * @throws FileNotFoundException
      */
@@ -252,6 +253,7 @@ public class MainGUI{
     /**
      *  Sends data to all other machines
      * @param data to be sent
+     * @autor Charles Jackson
      */
     public void sendToAll(byte[] data){
         for(int i = 0; i < networks.length; ++i){                                    //for all networks
@@ -319,25 +321,24 @@ public class MainGUI{
      *
      * @return the block to be added to this machine's block chain. Each element
      * is a vote
-     * @throws CorruptedBlockException if the error threshold was met
+     * @throws CorruptedBlockException if the error threshold was met. AKA if the hacker was able to hack more than 100%-threshhold% of computers but less than threshold%
      * @author Charles Jackson
      */
     public String[] getNextBlock() throws CorruptedBlockException, FileNotFoundException, IOException{
         Scanner myBlockFile = new Scanner(new File("currentBlock.txt"));        //for reading in my block from a file
         String[] myBlock = new String[blockSize];                               //to store my block
-        String[][] blocks = new String[networks.length][blockSize];                  //for storing the blocks for machines other than my own [machine][a vote in that machine's block]
-        for(int i = 0; myBlockFile.hasNextLine(); ++i)
+        String[][] blocks = new String[numberOfMachines][blockSize];             //for storing the blocks for machines other than my own [machine][a vote in that machine's block]
+        for(int i = 0; myBlockFile.hasNextLine(); ++i)                          //read in my block from file
             myBlock[i] = myBlockFile.nextLine().trim();
         myBlockFile.close();
-        Arrays.sort(myBlock);
+        Arrays.sort(myBlock);                           	                //sort my block 
         byte[] data = new byte[blockSize * voteSize];                           //cast block to a byte array
-        for(int i = 0; i < blockSize; ++i)
-            for(int j = 0; j < myBlock.length; ++j)
-                data[i] = (byte) myBlock[i].charAt(i);
-        //send my sorted block to all machines
-        sendToAll(data);
+        for(int i = 0; i < blockSize; ++i)                                      //for every vote in the block 
+            for(int j = 0; j < voteSize; ++j)                                   //for every character in each vote 
+                data[i] = (byte) myBlock[i].charAt(j);                          //cast the character to type byte
+        sendToAll(data);                                                        //send my block to everyone
         //receive sorted blocks from other machines
-        for(int i = 0; i < blocks.length; ++i)
+        for(int i = 0; i < numberOfMachines; ++i)
             try{
                 DatagramPacket o = new DatagramPacket(                          //to receive blocks from others
                         new byte[blockSize * voteSize], blockSize * voteSize);
@@ -347,7 +348,7 @@ public class MainGUI{
                         blocks[i][i] += o.getData()[j * k];
             }catch(SocketTimeoutException tm){                                  //if no one is responding
                 System.out.println("no blocks at the moment");
-                continue;                                                       //continue to the next step
+                break;                                                       //continue to the next step
             }catch(Exception ex){
                 System.out.println(ex+": "+ex.getMessage());
             }
@@ -379,8 +380,7 @@ public class MainGUI{
         percentError /= (double) (numberOfMachines);                            //the percent error for this block
         if(percentError >= threshold)                                           //if 90% of machines are ≥ 90% then add the
             if(PPE < threshold)                                                 //if my PPE is < 90% then my block is good and I should share it and return it
-                //send my good block to corrupted machines(AKA all machines)
-                sendToAll(data);
+                sendToAll(data);                                                //send my good block to corrupted machines(AKA all machines)
                                                                                 //return my block
             else                                                                //else I need a non-corrupted block
                 try{                                                            //receive a < 90% error block from another machine
@@ -400,12 +400,12 @@ public class MainGUI{
         //flush out the data stream
         for(int i = 0; i < numberOfMachines; ++i)
             try{
-                DatagramPacket o = new DatagramPacket( //to receive blocks from others
+                DatagramPacket o = new DatagramPacket(                          //to receive blocks from others
                         new byte[blockSize * voteSize], blockSize * voteSize);
                 receiveBlocks.receive(o);                                       //receive one block
             }catch(SocketTimeoutException tm){                                  //if no one is responding
                 System.out.println("no more blocks");
-                continue;                                                       //continue to the next step
+                break;                                                       //continue to the next step
             }catch(Exception ex){
                 System.out.println(ex+": "+ex.getMessage());
             }
@@ -420,6 +420,10 @@ public class MainGUI{
     public static double toDouble(byte[] bytes){
         return ByteBuffer.wrap(bytes).getDouble();
     }
+    /**MAIN
+     *
+     *
+     */
     public static void main(String[] args){                                     //driver function
         frame.setPreferredSize(new Dimension(800, 400));
         frame.setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
