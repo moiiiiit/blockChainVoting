@@ -329,7 +329,7 @@ public class MainGUI{
         Scanner myBlockFile = new Scanner(new File("currentBlock.txt"));        //for reading in my block from a file
         String[] myBlock = new String[blockSize];                               //to store my block
         String[][] blocks = new String[numberOfMachines][blockSize];             //for storing the blocks for machines other than my own [machine][a vote in that machine's block]
-        for(int i = 0; myBlockFile.hasNextLine(); ++i)                          //read in my block from file
+        for(int i = 0; i<blockSize; ++i)                          //read in my block from file
             myBlock[i] = myBlockFile.nextLine().trim();
         myBlockFile.close();
         Arrays.sort(myBlock);                           	                //sort my block 
