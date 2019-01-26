@@ -223,7 +223,8 @@ public class MainGUI{
                     return;
                 }
                 JOptionPane.showMessageDialog(null, "Thank you for voting. Please close this window and proceed.", "Voting Application", JOptionPane.INFORMATION_MESSAGE);
-                String vote = EncryptionX.encrypt(voterIDField.getText()
+                String format = String.format("%%0%dd", 12);
+                String vote = EncryptionX.encrypt(String.format(format,Integer.parseInt(voterIDField.getText()))
                         + ((CandidateNames) comboBox1.getSelectedItem()).getiD()
                         + "1" + ((CandidateNames) comboBox2.getSelectedItem()).getiD()
                         + "2" + ((CandidateNames) comboBox3.getSelectedItem()).getiD()
