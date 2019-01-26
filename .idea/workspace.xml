@@ -7,10 +7,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="46a5dc23-9988-40b9-8d2d-afa51e16d13a" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/currentBlock.txt" beforeDir="false" afterPath="$PROJECT_DIR$/currentBlock.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/blockChainVoting_jar/blockChainVoting.jar" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/blockChainVoting_jar/blockChainVoting.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/blockChainVoting/MainGUI.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/blockChainVoting/MainGUI.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/MainGUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/MainGUI.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -24,13 +21,13 @@
     <session id="-649473691">
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="java" value="202" />
+          <entry key="java" value="225" />
           <entry key="txt" value="43" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="JAVA" value="202" />
+          <entry key="JAVA" value="225" />
           <entry key="PLAIN_TEXT" value="43" />
         </counts>
       </usages-collector>
@@ -101,7 +98,11 @@
       </file>
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/currentBlock.txt">
-          <provider selected="true" editor-type-id="text-editor" />
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="119">
+              <caret line="7" lean-forward="true" selection-start-line="7" selection-end-line="7" />
+            </state>
+          </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
@@ -119,8 +120,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/MainGUI.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="127">
-              <caret line="277" selection-start-line="277" selection-end-line="277" />
+            <state relative-caret-position="65">
+              <caret line="365" column="51" lean-forward="true" selection-start-line="365" selection-start-column="51" selection-end-line="365" selection-end-column="51" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#830#831#0" expanded="true" />
@@ -207,8 +208,8 @@
         <option value="$PROJECT_DIR$/src/CalculateVotes.java" />
         <option value="$PROJECT_DIR$/blockChain.txt" />
         <option value="$PROJECT_DIR$/src/MainGUI.form" />
-        <option value="$PROJECT_DIR$/src/MainGUI.java" />
         <option value="$PROJECT_DIR$/currentBlock.txt" />
+        <option value="$PROJECT_DIR$/src/MainGUI.java" />
       </list>
     </option>
   </component>
@@ -218,7 +219,7 @@
     <detection-done>true</detection-done>
     <sorting>DEFINITION_ORDER</sorting>
   </component>
-  <component name="ProjectFrameBounds" extendedState="7">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="950" />
     <option name="width" value="979" />
     <option name="height" value="1040" />
@@ -235,7 +236,7 @@
     <property name="UI_DESIGNER_EDITOR_MODE.UIDesignerToolWindowManager.WIDTH" value="314" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1548114809287" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1548472298647" />
     <property name="last_opened_file_path" value="$USER_HOME$/PycharmProjects/learning" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="project.structure.last.edited" value="Project" />
@@ -294,7 +295,7 @@
       <workItem from="1548108556858" duration="1403000" />
       <workItem from="1548110075705" duration="1291000" />
       <workItem from="1548167775654" duration="55000" />
-      <workItem from="1548463549801" duration="7879000" />
+      <workItem from="1548463549801" duration="8665000" />
     </task>
     <task id="LOCAL-00001" summary="Created the form and GUI">
       <created>1544949755940</created>
@@ -433,7 +434,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="89127000" />
+    <option name="totallyTimeSpent" value="89913000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -616,12 +617,16 @@
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/currentBlock.txt">
-      <provider selected="true" editor-type-id="text-editor" />
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="7" lean-forward="true" selection-start-line="7" selection-end-line="7" />
+        </state>
+      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/MainGUI.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="127">
-          <caret line="277" selection-start-line="277" selection-end-line="277" />
+        <state relative-caret-position="65">
+          <caret line="365" column="51" lean-forward="true" selection-start-line="365" selection-start-column="51" selection-end-line="365" selection-end-column="51" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#830#831#0" expanded="true" />

@@ -58,7 +58,7 @@ public class MainGUI{
     private final double threshold = .5;
     private final int voteSize = 88;                                              //how many Characters is one vote
     private final int MaxNumberOfMachinesPerNetwork = 10;
-    private final int numberOfMachines = 4;
+    private final int numberOfMachines = 2;
     private static boolean exit = false;
     private final String myIp="70.121.56.92";                                                   //the public ip of the network private network I'm in
     private int port;
@@ -364,7 +364,7 @@ public class MainGUI{
                 data[j+i*(voteSize)] = (byte) myBlock[i].charAt(j);                          //cast the character to type byte
         sendBlockToAll(data);                                                        //send my block to everyone
         //receive sorted blocks from other machines
-        for(int i = 0; i < numberOfMachines; ++i)
+        for(int i = 0; i < numberOfMachines-1; ++i)
             try{
                 DatagramPacket o = new DatagramPacket(                          //to receive blocks from others
                         new byte[blockSize * voteSize], blockSize * voteSize);
@@ -374,7 +374,7 @@ public class MainGUI{
                         blocks[i][j] += o.getData()[j * k];
             }catch(SocketTimeoutException tm){                                  //if no one is responding
                 System.out.println("no blocks at the moment");
-                break;                                                       //continue to the next step
+                --i;                                                       //continue to the next step
             }catch(Exception ex){
                 System.out.println(ex+": "+ex.getMessage());
             }
