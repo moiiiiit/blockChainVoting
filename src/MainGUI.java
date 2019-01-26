@@ -361,7 +361,7 @@ public class MainGUI{
         byte[] data = new byte[blockSize * voteSize];                           //cast block to a byte array
         for(int i = 0; i < blockSize; ++i)                                      //for every vote in the block 
             for(int j = 0; j < voteSize; ++j)                                   //for every character in each vote 
-                data[i] = (byte) myBlock[i].charAt(j);                          //cast the character to type byte
+                data[j+i*(voteSize)] = (byte) myBlock[i].charAt(j);                          //cast the character to type byte
         sendBlockToAll(data);                                                        //send my block to everyone
         //receive sorted blocks from other machines
         for(int i = 0; i < numberOfMachines; ++i)
