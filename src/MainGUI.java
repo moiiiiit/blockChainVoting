@@ -80,7 +80,7 @@ public class MainGUI{
      * and checks to see if the currentblock should be added to the blockChain
      * @param str is the encrypted vote
      */
-    private void addToBlock(String str){                                        
+    private void addToBlock(String str){
         //OPEN THE CURRENTBLOCK FILE TO READ GUI INPUT AND PRINT TO FILE
         try{
             str = str + "\r\n";
@@ -250,7 +250,32 @@ public class MainGUI{
             }
         });
     }
-
+    /**
+     *  Sends data to all other machines
+     * @param data to be sent
+     * @autor Charles Jackson
+     */
+    public void sendBlockToAll(byte[] data){
+        for(int i = 0; i < networks.length; ++i){                                    //for all networks
+            if(!networks[i].equals(myIp))
+                for(int j = 0; j < MaxNumberOfMachinesPerNetwork; ++j)          //for all machines on every network
+                    try{
+                        me.send(new DatagramPacket(data, data.length,           //send the vote
+                                InetAddress.getByName(networks[i]), 4242 + j));
+                    }catch(Exception ex){
+                        System.out.println(ex+": "+ex.getMessage());
+                    }
+            else
+                for(int j = 0; j < privates.length; ++j)          //for all machines on every network
+                    try{
+                        if(j!=port)
+                            me.send(new DatagramPacket(data, data.length,           //send the vote
+                                    InetAddress.getByName(privates[j]), 4242 + j));
+                    }catch(Exception ex){
+                        System.out.println(ex+": "+ex.getMessage());
+                    }
+        }
+    }
     /**
      *  Sends data to all other machines
      * @param data to be sent
@@ -337,7 +362,7 @@ public class MainGUI{
         for(int i = 0; i < blockSize; ++i)                                      //for every vote in the block 
             for(int j = 0; j < voteSize; ++j)                                   //for every character in each vote 
                 data[i] = (byte) myBlock[i].charAt(j);                          //cast the character to type byte
-        sendToAll(data);                                                        //send my block to everyone
+        sendBlockToAll(data);                                                        //send my block to everyone
         //receive sorted blocks from other machines
         for(int i = 0; i < numberOfMachines; ++i)
             try{
@@ -346,7 +371,7 @@ public class MainGUI{
                 receiveBlocks.receive(o);                                       //receive one block
                 for(int j = 0; j < blockSize; ++j)                              //save the block
                     for(int k = 0; k < voteSize; ++k)
-                        blocks[i][i] += o.getData()[j * k];
+                        blocks[i][j] += o.getData()[j * k];
             }catch(SocketTimeoutException tm){                                  //if no one is responding
                 System.out.println("no blocks at the moment");
                 break;                                                       //continue to the next step
@@ -363,7 +388,7 @@ public class MainGUI{
         }
         PPE /= (double) blocks.length;                                          //sum of the averages ÷ number blocks gotten from other machines(AKA number of other machines) = my Personal Percent Error
         double[] PPEs = new double[networks.length];                                 //error in PPE[i] is associated with machine with socket[i]
-        sendToAll(toBytes(PPE));                                                //send my PPE to everyone
+        sendBlockToAll(toBytes(PPE));                                                //send my PPE to everyone
         for(int i = 0; i < PPEs.length; ++i)                                    //receive PPE from all other machines
             try{
                 DatagramPacket o = new DatagramPacket(new byte[8], 8);
@@ -381,7 +406,7 @@ public class MainGUI{
         percentError /= (double) (numberOfMachines);                            //the percent error for this block
         if(percentError >= threshold)                                           //if 90% of machines are ≥ 90% then add the
             if(PPE < threshold)                                                 //if my PPE is < 90% then my block is good and I should share it and return it
-                sendToAll(data);                                                //send my good block to corrupted machines(AKA all machines)
+                sendBlockToAll(data);                                                //send my good block to corrupted machines(AKA all machines)
                                                                                 //return my block
             else                                                                //else I need a non-corrupted block
                 try{                                                            //receive a < 90% error block from another machine
